@@ -11,9 +11,9 @@ class Project extends Component {
             <div className="category-tabs">
                 <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId})} ripple>
                     <Tab>JS/HTML/CSS</Tab>
-                    <Tab>Spring</Tab>
-                    <Tab>Angular</Tab>
-                    <Tab>React</Tab>
+                    <Tab>Spring/Java</Tab>
+                    <Tab>Angular/TypeScript</Tab>
+                    <Tab>React/JavaScript</Tab>
                 </Tabs>
             </div>
         )
