@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+.project-grid {
+    display: flex;
+}
+
 .avatar-img {
     height: 250px;
     width: 250px;
