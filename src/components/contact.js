@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component } from 'react';
 import { Grid, Cell } from 'react-mdl';
 import avatarImg from '../assets/CsabaVadasz2022.png';
 
@@ -19,7 +19,6 @@ class Contact extends Component {
     }
 
     render() {
-        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         const isChrome = /chrome/i.test(navigator.userAgent);
         const isEdge = /edge/i.test(navigator.userAgent);
 
@@ -28,7 +27,7 @@ class Contact extends Component {
                 <Grid className='contact-grid'>
                     <Cell col={6}>
                         <h2>Csaba Vadasz</h2>
-                        {isSafari || isChrome || isEdge ? (
+                        {isChrome || isEdge ? (
                             <div>
                                 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
                                 <div className="badge-base LI-profile-badge"
