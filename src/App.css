@@ -39,6 +39,12 @@
     font-weight: bold;
 }
 
+.contact-grid hr {
+    border-top: 5px dotted;
+    width: 50%;
+    margin: auto;
+}
+
 .avatar-img {
     height: 250px;
     width: 250px;

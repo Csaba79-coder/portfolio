@@ -32,7 +32,7 @@ class Project extends Component {
                             It was my first frontend project using HTML & CSS with some JavaScript, and I also rendered it as a GitHub io page.
                         </CardText>
                         <CardActions border>
-                            <Button colored href="https://github.com/Csaba79-coder/csaba79-coder.github.io" target="_blank">GitHub Code</Button>
+                            <Button colored href="https://github.com/Csaba79-coder/csaba79-coder.github.io" target="_blank">Source Code</Button>
                             <Button colored  href="https://csaba79-coder.github.io/" target="_blank">Live Demo</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
@@ -63,7 +63,7 @@ class Project extends Component {
                             ???
                         </CardText>
                         <CardActions border>
-                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">GitHub Code</Button>
+                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
                             <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
@@ -89,7 +89,7 @@ class Project extends Component {
                             ???
                         </CardText>
                         <CardActions border>
-                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">GitHub Code</Button>
+                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
                             <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
@@ -115,7 +115,7 @@ class Project extends Component {
                             ???
                         </CardText>
                         <CardActions border>
-                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">GitHub Code</Button>
+                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
                             <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
@@ -141,7 +141,7 @@ class Project extends Component {
                             ???
                         </CardText>
                         <CardActions border>
-                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">GitHub Code</Button>
+                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
                             <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
@@ -172,7 +172,7 @@ class Project extends Component {
                             ???
                         </CardText>
                         <CardActions border>
-                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">GitHub Code</Button>
+                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
                             <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
@@ -198,7 +198,7 @@ class Project extends Component {
                             ???
                         </CardText>
                         <CardActions border>
-                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">GitHub Code</Button>
+                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
                             <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
@@ -229,7 +229,7 @@ class Project extends Component {
                             As an enthusiastic backend developer, I thought it important, to create an introduction site for myself, where I can present my projects and my resume.
                         </CardText>
                         <CardActions border>
-                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">GitHub Code</Button>
+                            <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
                             <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
