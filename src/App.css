@@ -6,7 +6,10 @@
 }
 
 .project-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Display 4 cards per row */
+    grid-gap: 20px; /* Set the gap between cards */
+    justify-items: center; /* Center the cards horizontally */
 }
 
 .contact-body {
