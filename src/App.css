@@ -7,9 +7,27 @@
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Display 4 cards per row */
-    grid-gap: 20px; /* Set the gap between cards */
-    justify-items: center; /* Center the cards horizontally */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
+}
+
+@media (max-width: 1200px) {
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .contact-body {

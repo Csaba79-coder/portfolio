@@ -16,7 +16,7 @@ class Project extends Component {
         if (this.state.activeTab === 0) {
             return (
                 <div className='project-grid'>
-                    <Card shadow={5} style={{ minWidth: '450px', margin: 'auto' }}>
+                    <Card shadow={5} style={{ margin: 'auto' }}>
                         <CardTitle
                             key={this.state.activeTab} // Add a unique key
                             style={{
@@ -48,7 +48,7 @@ class Project extends Component {
         } else if (this.state.activeTab === 1) {
             return (
                 <div className='project-grid'>
-                    <Card shadow={5} style={{ minWidth: '450px', margin: 'auto' }}>
+                    <Card shadow={5} style={{ margin: 'auto' }}>
                         <CardTitle
                             style={{
                                 color: '#fff',
@@ -74,7 +74,7 @@ class Project extends Component {
                             </CopyToClipboard>
                         </CardMenu>
                     </Card>
-                    <Card shadow={5} style={{ minWidth: '450px', margin: 'auto' }}>
+                    <Card shadow={5} style={{ margin: 'auto' }}>
                         <CardTitle
                             style={{
                                 color: '#fff',
@@ -100,7 +100,7 @@ class Project extends Component {
                             </CopyToClipboard>
                         </CardMenu>
                     </Card>
-                    <Card shadow={5} style={{ minWidth: '450px', margin: 'auto' }}>
+                    <Card shadow={5} style={{ margin: 'auto' }}>
                         <CardTitle
                             style={{
                                 color: '#fff',
@@ -126,7 +126,7 @@ class Project extends Component {
                             </CopyToClipboard>
                         </CardMenu>
                     </Card>
-                    <Card shadow={5} style={{ minWidth: '450px', margin: 'auto' }}>
+                    <Card shadow={5} style={{ margin: 'auto' }}>
                         <CardTitle
                             style={{
                                 color: '#fff',
@@ -157,7 +157,7 @@ class Project extends Component {
         } else if (this.state.activeTab === 2) {
             return (
                 <div className='project-grid'>
-                    <Card shadow={5} style={{ minWidth: '450px', margin: 'auto' }}>
+                    <Card shadow={5} style={{ margin: 'auto' }}>
                         <CardTitle
                             style={{
                                 color: '#fff',
@@ -183,7 +183,7 @@ class Project extends Component {
                             </CopyToClipboard>
                         </CardMenu>
                     </Card>
-                    <Card shadow={5} style={{ minWidth: '450px', margin: 'auto' }}>
+                    <Card shadow={5} style={{ margin: 'auto' }}>
                         <CardTitle
                             style={{
                                 color: '#fff',
@@ -214,7 +214,7 @@ class Project extends Component {
         } else if (this.state.activeTab === 3) {
             return (
                 <div className='project-grid'>
-                    <Card shadow={5} style={{ minWidth: '450px', margin: 'auto' }}>
+                    <Card shadow={5} style={{ margin: 'auto' }}>
                         <CardTitle
                             style={{
                                 color: '#fff',
