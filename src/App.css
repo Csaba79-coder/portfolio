@@ -32,7 +32,6 @@
 
 .contact-body {
     margin: auto;
-    background-color: grey;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -46,8 +45,6 @@
     width: 80%;
     height: 550px;
     background: white;
-    color: black;
-    border: 2px solid red;
     margin-bottom: 20px;
 }
 
@@ -64,6 +61,10 @@
     border-top: 5px dotted;
     width: 50%;
     margin: auto;
+}
+
+.contact-list {
+    padding-left: 100px;
 }
 
 .avatar-img {

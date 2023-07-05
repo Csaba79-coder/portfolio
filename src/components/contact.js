@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import { Grid, Cell } from 'react-mdl';
+import {Grid, Cell, ListItem, ListItemContent, List} from 'react-mdl';
 import avatarImg from '../assets/CsabaVadasz2022.png';
+import {FaAddressCard, FaPhone} from 'react-icons/fa';
+import { IoIosMail } from 'react-icons/io';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Button from '@material-ui/core/Button';
 
 class Contact extends Component {
     componentDidMount() {
@@ -69,6 +73,38 @@ class Contact extends Component {
                     <Cell col={6}>
                         <h2>Contact Me</h2>
                         <hr />
+
+                        <div className="contact-list">
+                            <List>
+                                <ListItem>
+                                    <ListItemContent style={{ fontSize: '20px', fontFamily: 'Anton', display: 'flex', alignItems: 'center' }}>
+                                        <FaPhone style={{ color: '#0077B5', fontSize: '2em', marginRight: '0.5em' }}/>
+                                        <span style={{ marginLeft: '0.5em' }}>+36-30-235-63-04</span>
+                                    </ListItemContent>
+                                </ListItem>
+
+                                <ListItem>
+                                    <ListItemContent style={{ fontSize: '20px', fontFamily: 'Anton', display: 'flex', alignItems: 'center' }}>
+                                        <IoIosMail style={{ color: '#0077B5', fontSize: '2em', marginRight: '0.5em' }}/>
+                                        <span style={{ marginLeft: '0.5em' }}>
+                                            csabavadasz79@gmail.com
+                                        </span>
+                                        <CopyToClipboard text="csabavadasz79@gmail.com">
+                                            <Button style={{ color: '#0077B5', marginLeft: '0.5em' }} variant="outlined" color="primary" onClick={() => alert('Email copied to clipboard!')}>
+                                                Copy
+                                            </Button>
+                                        </CopyToClipboard>
+                                    </ListItemContent>
+                                </ListItem>
+
+                                <ListItem>
+                                    <ListItemContent style={{ fontSize: '20px', fontFamily: 'Anton', display: 'flex', alignItems: 'center' }}>
+                                        <FaAddressCard style={{ color: '#0077B5', fontSize: '2em', marginRight: '0.5em' }}/>
+                                        <span style={{ marginLeft: '0.5em' }}>Budakalasz, Hungary, Europe</span>
+                                    </ListItemContent>
+                                </ListItem>
+                            </List>
+                        </div>
                     </Cell>
                 </Grid>
             </div>
