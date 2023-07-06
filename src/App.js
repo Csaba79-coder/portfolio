@@ -7,19 +7,19 @@ function App() {
   return (
       <div className="demo-big-content">
           <Layout>
-              <Header className='header-color' title="Csaba79-coder" scroll>
+              <Header className='header-color' title={<Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Csaba79-coder</Link>} scroll>
                   <Navigation>
-                      <Link to="/resume">Resume</Link>
                       <Link to="/about-me">About Me</Link>
                       <Link to="/projects">Projects</Link>
+                      <Link to="/resume">Resume</Link>
                       <Link to="/contact">Contact</Link>
                   </Navigation>
               </Header>
-              <Drawer title="Csaba79-coder">
+              <Drawer title={<Link to="/" style={{ color: 'grey', textDecoration: 'none' }}>Csaba79-coder</Link>}>
                   <Navigation>
-                      <Link to="/resume">Resume</Link>
                       <Link to="/about-me">About Me</Link>
                       <Link to="/projects">Projects</Link>
+                      <Link to="/resume">Resume</Link>
                       <Link to="/contact">Contact</Link>
                   </Navigation>
               </Drawer>
