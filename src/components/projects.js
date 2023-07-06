@@ -3,6 +3,7 @@ import { Card, CardTitle, CardText, CardActions, Button, CardMenu, IconButton, T
 import htmlCssImage from '../assets/html-css.png'; // Replace with the correct image path
 import reactJSImage from '../assets/react-js.png'; // Replace with the correct image path
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Footer from "./footer";
 
 class Project extends Component {
     constructor(props) {
@@ -262,6 +263,7 @@ class Project extends Component {
                         </div>
                     </Cell>
                 </Grid>
+                <Footer />
             </div>
         );
     }

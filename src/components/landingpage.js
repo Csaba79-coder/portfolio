@@ -3,6 +3,7 @@ import {Cell, Grid} from "react-mdl";
 import avatarImg from '../assets/CsabaVadasz2022.png';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
+import Footer from "./footer";
 
 class Landing extends Component {
     render() {
@@ -27,6 +28,7 @@ class Landing extends Component {
                         </div>
                     </Cell>
                 </Grid>
+                <Footer />
             </div>
         )
     }

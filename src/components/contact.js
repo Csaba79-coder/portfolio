@@ -5,6 +5,7 @@ import {FaAddressCard, FaPhone} from 'react-icons/fa';
 import { IoIosMail } from 'react-icons/io';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Button from '@material-ui/core/Button';
+import Footer from "./footer";
 
 class Contact extends Component {
     componentDidMount() {
@@ -107,6 +108,7 @@ class Contact extends Component {
                         </div>
                     </Cell>
                 </Grid>
+                <Footer />
             </div>
         );
     }

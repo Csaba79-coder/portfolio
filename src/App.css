@@ -31,20 +31,37 @@
 }
 
 .about-body {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: center;
     text-align: center;
     margin: auto;
     position: fixed;
     width: 100%;
     height: 100%;
-    justify-content: center;
     padding-top: 2em;
-    background: linear-gradient( to right, #24243e, #302b63, #0f0c29 );
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .about-body h2 {
     font-family: 'Anton', sans-serif;
     font-weight: bold;
     color: white;
+}
+
+.about-body p {
+    padding: 2em;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: bold;
+    color: white;
+    grid-column: 2; /* Align the <p> tag to the middle column */
+    max-width: calc(100vw / 3); /* Set the max width to one third of the screen */
+    margin: 0 auto; /* Center the <p> tag horizontally within the column */
 }
 
 .contact-body {
@@ -61,7 +78,6 @@
     font-family: 'Anton', sans-serif;
     font-weight: bold;
 }
-
 
 .contact-grid {
     text-align: center;
@@ -132,4 +148,11 @@
 .linkedin-icon, .github-icon {
     color: white;
     font-size: 3em;
+}
+
+.footer {
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
