@@ -26,6 +26,8 @@ class Project extends Component {
                                 color: '#fff',
                                 height: '176px',
                                 background: `url(${htmlCssImage}) center / contain no-repeat`,
+                                backgroundSize: 'contain',
+                                backgroundRepeat: 'no-repeat',
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -57,6 +59,8 @@ class Project extends Component {
                                 color: '#fff',
                                 height: '176px',
                                 background: `url(${springImage}) center / contain no-repeat`,
+                                backgroundSize: 'contain',
+                                backgroundRepeat: 'no-repeat',
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -83,6 +87,8 @@ class Project extends Component {
                                 color: '#fff',
                                 height: '176px',
                                 background: `url(${springImage}) center / contain no-repeat`,
+                                backgroundSize: 'contain',
+                                backgroundRepeat: 'no-repeat',
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -109,6 +115,8 @@ class Project extends Component {
                                 color: '#fff',
                                 height: '176px',
                                 background: `url(${springImage}) center / contain no-repeat`,
+                                backgroundSize: 'contain',
+                                backgroundRepeat: 'no-repeat',
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -135,6 +143,8 @@ class Project extends Component {
                                 color: '#fff',
                                 height: '176px',
                                 background: `url(${springImage}) center / contain no-repeat`,
+                                backgroundSize: 'contain',
+                                backgroundRepeat: 'no-repeat',
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -166,6 +176,8 @@ class Project extends Component {
                                 color: '#fff',
                                 height: '176px',
                                 background: `url(${angularImage}) center / contain no-repeat`,
+                                backgroundSize: 'contain',
+                                backgroundRepeat: 'no-repeat',
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -192,6 +204,8 @@ class Project extends Component {
                                 color: '#fff',
                                 height: '176px',
                                 background: `url(${angularImage}) center / contain no-repeat`,
+                                backgroundSize: 'contain',
+                                backgroundRepeat: 'no-repeat',
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -223,6 +237,8 @@ class Project extends Component {
                                 color: '#fff',
                                 height: '176px',
                                 background: `url(${reactJSImage}) center / contain no-repeat`,
+                                backgroundSize: 'contain',
+                                backgroundRepeat: 'no-repeat',
                                 backgroundColor: 'blue'
                             }}
                         >
