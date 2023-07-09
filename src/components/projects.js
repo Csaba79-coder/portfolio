@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Card, CardTitle, CardText, CardActions, Button, CardMenu, IconButton, Tabs, Tab, Grid, Cell } from 'react-mdl';
 import htmlCssImage from '../assets/html-css.png'; // Replace with the correct image path
 import reactJSImage from '../assets/react-js.png'; // Replace with the correct image path
+import springImage from '../assets/spring.png'; // Replace with the correct image path
+import angularImage from '../assets/angular.png'; // Replace with the correct image path
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Footer from "./footer";
 
@@ -54,7 +56,7 @@ class Project extends Component {
                             style={{
                                 color: '#fff',
                                 height: '176px',
-                                background: `url(${reactJSImage}) center / contain no-repeat`,
+                                background: `url(${springImage}) center / contain no-repeat`,
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -65,7 +67,7 @@ class Project extends Component {
                         </CardText>
                         <CardActions border>
                             <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
-                            <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
+                            <Button colored href="https://csaba79coder.com/" target="_blank">Pic Gallery</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
                             <CopyToClipboard text="https://csaba79-coder.github.io/">
@@ -80,7 +82,7 @@ class Project extends Component {
                             style={{
                                 color: '#fff',
                                 height: '176px',
-                                background: `url(${reactJSImage}) center / contain no-repeat`,
+                                background: `url(${springImage}) center / contain no-repeat`,
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -91,7 +93,7 @@ class Project extends Component {
                         </CardText>
                         <CardActions border>
                             <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
-                            <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
+                            <Button colored href="https://csaba79coder.com/" target="_blank">Pic Gallery</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
                             <CopyToClipboard text="https://csaba79-coder.github.io/">
@@ -106,7 +108,7 @@ class Project extends Component {
                             style={{
                                 color: '#fff',
                                 height: '176px',
-                                background: `url(${reactJSImage}) center / contain no-repeat`,
+                                background: `url(${springImage}) center / contain no-repeat`,
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -117,7 +119,7 @@ class Project extends Component {
                         </CardText>
                         <CardActions border>
                             <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
-                            <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
+                            <Button colored href="https://csaba79coder.com/" target="_blank">Pic Gallery</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
                             <CopyToClipboard text="https://csaba79-coder.github.io/">
@@ -132,7 +134,7 @@ class Project extends Component {
                             style={{
                                 color: '#fff',
                                 height: '176px',
-                                background: `url(${reactJSImage}) center / contain no-repeat`,
+                                background: `url(${springImage}) center / contain no-repeat`,
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -143,7 +145,7 @@ class Project extends Component {
                         </CardText>
                         <CardActions border>
                             <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
-                            <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
+                            <Button colored href="https://csaba79coder.com/" target="_blank">Pic Gallery</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
                             <CopyToClipboard text="https://csaba79-coder.github.io/">
@@ -163,7 +165,7 @@ class Project extends Component {
                             style={{
                                 color: '#fff',
                                 height: '176px',
-                                background: `url(${reactJSImage}) center / contain no-repeat`,
+                                background: `url(${angularImage}) center / contain no-repeat`,
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -174,7 +176,7 @@ class Project extends Component {
                         </CardText>
                         <CardActions border>
                             <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
-                            <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
+                            <Button colored href="https://csaba79coder.com/" target="_blank">Pic Gallery</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
                             <CopyToClipboard text="https://csaba79-coder.github.io/">
@@ -189,7 +191,7 @@ class Project extends Component {
                             style={{
                                 color: '#fff',
                                 height: '176px',
-                                background: `url(${reactJSImage}) center / contain no-repeat`,
+                                background: `url(${angularImage}) center / contain no-repeat`,
                                 backgroundColor: 'blue'
                             }}
                         >
@@ -200,7 +202,7 @@ class Project extends Component {
                         </CardText>
                         <CardActions border>
                             <Button colored href="https://github.com/Csaba79-coder/portfolio" target="_blank">Source Code</Button>
-                            <Button colored href="https://csaba79coder.com/" target="_blank">Live Demo</Button>
+                            <Button colored href="https://csaba79coder.com/" target="_blank">Pic Gallery</Button>
                         </CardActions>
                         <CardMenu style={{ color: '#fff' }}>
                             <CopyToClipboard text="https://csaba79-coder.github.io/">

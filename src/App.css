@@ -84,7 +84,7 @@
     color: white;
 }
 
-.about-body p {
+.about-body p, .about-body a {
     padding: 2em;
     font-family: 'Oxygen', sans-serif;
     font-weight: bold;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Cell, Grid, List, ListItem, ListItemContent} from "react-mdl";
+import {Cell, Grid} from "react-mdl";
 import Footer from "./footer";
 
 class About extends Component {
@@ -12,11 +12,37 @@ class About extends Component {
                         <h2>About Me</h2>
                         <hr />
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-                            Why do we use it?
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                            I am a Full Stack developer with 1+ years' of coding experience in the IT industry. I have familiarity with
+                            building CRUD applications, RESTful APIs using Java as language and Spring Boot as Framework.
+                            I have experience on gradle- and maven-based projects. I came across building JPA,
+                            Hibernate, Security in Spring Boot. I faced Unit Testing using JUnit and Mockito and
+                            Integration Testing using Postman and Spring MockMVC. I have also used to create an APi-first approach
+                            using Swagger, implemented in Spring (Java) and Angular (TypeScript). I have experience in Spring
+                            Microservices as well. I have acquaintance with building UI using HTML, CSS, Bootstrap, and JavaScript.
+                            I also used Angular with TypeScript and React with JavaScript for UI solutions.
                         </p>
+                        <a href="https://www.codewars.com/users/Csaba79-coder" target="_blank" rel="noopener noreferrer">
+                            My Codewars Profile <span className="arrow">→</span>
+                        </a>
+                        <br/>
+                        <br/>
+                        <a href="https://stackoverflow.com/users/15341736/csaba79-coder" target="_blank" rel="noopener noreferrer">
+                            My Stack Overflow Profile <span className="arrow">→</span>
+                        </a>
+                        <br/>
+                        <br/>
+                        <a href="https://profile.codersrank.io/user/csaba79-coder" target="_blank" rel="noopener noreferrer">
+                            My CodersRank Profile <span className="arrow">→</span>
+                        </a>
+                        <br/>
+                        <br/>
+                        <a href="https://dev.to/csaba79coder" target="_blank" rel="noopener noreferrer">
+                            My Dev Community Profile <span className="arrow">→</span>
+                        </a>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
                         <Footer />
                     </Cell>
                 </Grid>

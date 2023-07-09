@@ -10,10 +10,12 @@ class Resume extends Component {
         <div className="landing-container">
           <div className="background-image"></div>
 
+
           <Footer />
         </div>
     )
   }
 }
+
 
 export default Resume;
