@@ -195,3 +195,64 @@
     padding: 10px;
     text-align: center;
 }
+
+/* Main container */
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px;
+}
+
+/* Avatar and Introduction styling */
+.intro {
+    margin-bottom: 30px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Resume Download Section */
+.resume-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.resume-buttons a {
+    text-decoration: none;
+}
+
+.resume-button {
+    background-color:magenta;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+    background-color: #45a049;
+}
+
+.resume-button:focus {
+    outline: none;
+}
+
+.resume-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
