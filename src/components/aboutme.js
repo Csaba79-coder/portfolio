@@ -12,7 +12,7 @@ class About extends Component {
                         <h2>About Me</h2>
                         <hr />
                         <p>
-                            I am a Full Stack developer with 1+ years' of coding experience in the IT industry. I have familiarity with
+                            I am a Full Stack developer with 2+ years' of coding experience in the IT industry. I have familiarity with
                             building CRUD applications, RESTful APIs using Java as language and Spring Boot as Framework.
                             I have experience on gradle- and maven-based projects. I came across building JPA,
                             Hibernate, Security in Spring Boot. I faced Unit Testing using JUnit and Mockito and
