@@ -24,19 +24,19 @@ function App() {
 
   return (
       <div className="demo-big-content">
-          <AppBar position="static" className='header-color'>
+          <AppBar position="fixed" className='header-color'>
               <Toolbar>
                   <IconButton
                       edge="start"
                       color="inherit"
                       aria-label="menu"
                       onClick={toggleDrawer(true)}
-                      sx={{ mr: 2, display: { sm: 'none' } }}
+                      sx={{ mr: 2 }}
                   >
                       <MenuIcon />
                   </IconButton>
-                  <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                      <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Csaba79-coder</Link>
+                  <Typography variant="h6" component={Link} to="/" sx={{ flexGrow: 1, color: 'white', textDecoration: 'none' }}>
+                      Csaba79-coder
                   </Typography>
                   <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                       {menuItems.map((item) => (
@@ -47,6 +47,9 @@ function App() {
                   </Box>
               </Toolbar>
           </AppBar>
+
+          {/* Spacer to push content below AppBar */}
+          <Toolbar />
 
           <Drawer
               anchor="left"
@@ -59,8 +62,8 @@ function App() {
                   onClick={toggleDrawer(false)}
                   onKeyDown={toggleDrawer(false)}
               >
-                  <Typography variant="h6" sx={{ p: 2, color: 'grey' }}>
-                      <Link to="/" style={{ color: 'grey', textDecoration: 'none' }}>Csaba79-coder</Link>
+                  <Typography variant="h6" component={Link} to="/" sx={{ p: 2, color: 'grey', textDecoration: 'none', display: 'block' }}>
+                      Csaba79-coder
                   </Typography>
                   <List>
                       {menuItems.map((item) => (
