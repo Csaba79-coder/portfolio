@@ -4,6 +4,7 @@ import About from "./aboutme";
 import Project from "./projects";
 import Contact from "./contact";
 import Resume from "./resume";
+import ResumeGenerator from "./resumegenerator";
 
 const Main = () => (
     <Routes>
@@ -12,6 +13,7 @@ const Main = () => (
         <Route path="/projects" element={<Project />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/resume-generator/:lang" element={<ResumeGenerator />} />
         <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
 );
