@@ -13,7 +13,7 @@ class Landing extends Component {
                     <Grid item xs={12}>
                         <img src={avatarImg} alt="avatar" className="avatar-img" />
                         <div className="banner-text">
-                            <h1>Full Stack & AI Developer</h1>
+                            <h1>Full Stack & AI Engineer</h1>
                         </div>
                         <hr className="landing-separator" />
                         <p className="tech-stack-text">

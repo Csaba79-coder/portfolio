@@ -12,7 +12,7 @@ class Resume extends Component {
                 <div className="intro">
                     <img src={avatarImg} alt="Avatar" className="avatar"/>
                     <h1>Csaba Vadasz</h1>
-                    <h2>Full Stack Developer</h2>
+                    <h2>Full Stack & AI Engineer</h2>
                     <h4>
                         I am an enthusiastic Java-Spring software engineer, primarily a backend software developer,
                         interested in the development (technology) of Artificial Intelligence (AI).
