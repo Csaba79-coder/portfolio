@@ -13,9 +13,9 @@ class Landing extends Component {
                     <Grid item xs={12}>
                         <img src={avatarImg} alt="avatar" className="avatar-img" />
                         <div className="banner-text">
-                            <h1>Full Stack Developer</h1>
+                            <h1>Full Stack & AI Developer</h1>
                         </div>
-                        <hr />
+                        <hr className="landing-separator" />
                         <p style={{ color: 'white', fontSize: '20px', padding: '20px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
                             backgroundColor: 'rgba(0, 0, 0, 0.6)', display: 'inline-block' }}>
                             Java | Python | C# | HTML/CSS | Bootstrap | JavaScript | TypeScript | Spring | Angular | React
