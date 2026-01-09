@@ -134,20 +134,29 @@
 }
 
 .contact-title {
+    font-size: 2.5em !important;
     margin-bottom: 0.3em;
+}
+
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 1.8em !important;
+    }
 }
 
 .contact-separator {
     border: none;
-    height: 2px;
-    background: #65C7F7;
-    max-width: 80%;
+    height: 3px;
+    max-width: 50%;
     margin: 20px auto 30px;
+    background: linear-gradient(to right, transparent, #65C7F7, transparent);
+    border-radius: 2px;
 }
 
 @media (max-width: 768px) {
     .contact-separator {
-        max-width: 90%;
+        max-width: 70%;
+        height: 2px;
     }
 }
 
@@ -167,12 +176,6 @@
 .contact-grid p {
     font-family: 'Oxygen', sans-serif;
     font-weight: bold;
-}
-
-.contact-grid hr {
-    border-top: 5px dotted;
-    width: 50%;
-    margin: auto;
 }
 
 .contact-list {
