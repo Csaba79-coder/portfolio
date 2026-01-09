@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {Cell, Grid} from "react-mdl";
+import { Grid } from "@mui/material";
 import avatarImg from "../assets/CsabaVadasz2022.png";
-import {FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitter} from "react-icons/fa";
 import Footer from "./footer";
 
 class Resume extends Component {
@@ -22,8 +21,8 @@ class Resume extends Component {
                 </div>
 
                 {/* Resume Downloads Section */}
-                <Grid className="resume-grid">
-                    <Cell col={12}>
+                <Grid container className="resume-grid">
+                    <Grid item xs={12}>
                         <h3>Download my resumé:</h3>
                         <div className="resume-buttons">
                             <a href="/assets/csaba_vadasz_resume_eng.pdf" download>
@@ -39,7 +38,7 @@ class Resume extends Component {
                                 <button className="resume-button">Curriculum Vitae (Italiano)</button>
                             </a>
                         </div>
-                    </Cell>
+                    </Grid>
                 </Grid>
 
                 <Footer/>

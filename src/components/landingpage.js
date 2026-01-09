@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Cell, Grid} from "react-mdl";
+import { Grid } from "@mui/material";
 import santoriniImage from '../assets/santorini.png';
 import avatarImg from '../assets/CsabaVadasz2022.png';
 import { FaLinkedin, FaGithub, FaFacebook, FaTwitter, FaInstagram  } from 'react-icons/fa';
@@ -9,8 +9,8 @@ class Landing extends Component {
     render() {
         return(
             <div className="background-container" style={{ backgroundImage: `url(${santoriniImage})` }}>
-                <Grid className="background-container">
-                    <Cell col={12}>
+                <Grid container className="background-container">
+                    <Grid item xs={12}>
                         <img src={avatarImg} alt="avatar" className="avatar-img" />
                         <div className="banner-text">
                             <h1>Full Stack Developer</h1>
@@ -42,7 +42,7 @@ class Landing extends Component {
                                 <FaTwitter style={{ color: '#0077B5', fontSize: '4em' }}/>
                             </a>
                         </div>
-                    </Cell>
+                    </Grid>
                 </Grid>
                 <Footer />
             </div>
