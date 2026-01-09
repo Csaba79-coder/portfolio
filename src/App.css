@@ -139,15 +139,17 @@
 
 .contact-separator {
     border: none;
-    height: 2px;
-    background: #65C7F7;
-    max-width: 80%;
+    height: 3px;
+    max-width: 50%;
     margin: 20px auto 30px;
+    background: linear-gradient(to right, transparent, #65C7F7, transparent);
+    border-radius: 2px;
 }
 
 @media (max-width: 768px) {
     .contact-separator {
-        max-width: 90%;
+        max-width: 70%;
+        height: 2px;
     }
 }
 
@@ -169,28 +171,22 @@
     font-weight: bold;
 }
 
-.contact-grid hr {
-    border-top: 5px dotted;
-    width: 50%;
-    margin: auto;
-}
-
 .contact-list {
     padding-left: 100px;
 }
 
 .avatar-img {
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 @media (max-width: 768px) {
     .avatar-img {
         height: 200px;
         width: 200px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 }
 
@@ -198,16 +194,16 @@
     opacity: 0.8;
     width: auto;
     max-width: 50%;
-    margin: 20px auto;
+    margin: 10px auto;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px 20px;
+    padding: 2px 20px;
 }
 
 @media (max-width: 768px) {
     .banner-text {
         max-width: 90%;
-        padding: 8px 15px;
+        padding: 2px 15px;
     }
 }
 
@@ -387,7 +383,7 @@
     border: none;
     height: 4px;
     max-width: 50%;
-    margin: 20px auto;
+    margin: 10px auto;
     background: linear-gradient(to right, transparent, #65C7F7, #0052D4, #65C7F7, transparent);
     border-radius: 2px;
 }
@@ -396,5 +392,6 @@
     .landing-separator {
         max-width: 70%;
         height: 3px;
+        margin: 8px auto;
     }
 }
