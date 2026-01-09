@@ -35,9 +35,10 @@ function App() {
                   >
                       <MenuIcon />
                   </IconButton>
-                  <Typography variant="h6" component={Link} to="/" sx={{ flexGrow: 1, color: 'white', textDecoration: 'none' }}>
+                  <Typography variant="h6" component={Link} to="/" sx={{ color: 'white', textDecoration: 'none', mr: 2 }}>
                       Csaba79-coder
                   </Typography>
+                  <Box sx={{ flexGrow: 1 }} />
                   <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                       {menuItems.map((item) => (
                           <Button key={item.text} component={Link} to={item.path} sx={{ color: 'white' }}>
