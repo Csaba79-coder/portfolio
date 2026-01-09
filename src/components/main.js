@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "./landingpage";
 import About from "./aboutme";
 import Project from "./projects";
@@ -12,6 +12,7 @@ const Main = () => (
         <Route path="/projects" element={<Project />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
 );
 
