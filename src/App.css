@@ -139,31 +139,10 @@
 
 .contact-separator {
     border: none;
-    height: 1px;
-    background: transparent;
-    position: relative;
+    height: 2px;
+    background: #65C7F7;
     max-width: 80%;
     margin: 20px auto 30px;
-}
-
-.contact-separator::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40%;
-    height: 1px;
-    background: linear-gradient(to left, #65C7F7, transparent);
-}
-
-.contact-separator::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40%;
-    height: 1px;
-    background: linear-gradient(to right, #65C7F7, transparent);
 }
 
 @media (max-width: 768px) {
