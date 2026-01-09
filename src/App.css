@@ -327,6 +327,12 @@
     gap: 15px;
 }
 
+.resume-grid h3 {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
 .resume-buttons a {
     text-decoration: none;
 }
@@ -355,6 +361,67 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
+}
+
+.resume-page {
+    min-height: 100vh;
+    background: linear-gradient(to left, #0052D4, #65C7F7, #9CECFB);
+    display: flex;
+    flex-direction: column;
+}
+
+.resume-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.resume-content .intro {
+    margin-bottom: 30px;
+}
+
+.resume-content .avatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.resume-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.resume-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.resume-content h4 {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .resume-content h1 {
+        font-size: 2em;
+    }
+    .resume-content h2 {
+        font-size: 1.5em;
+    }
+    .resume-content .avatar {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 .landing-separator {
