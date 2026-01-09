@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from "@mui/material";
+import claudeLogo from '../assets/claude-ai-icon.png';
 import Footer from "./footer";
 
 class About extends Component {
@@ -35,6 +36,33 @@ class About extends Component {
                             </a>
                             <br/>
                             <br/>
+                            <br/>
+
+                            <hr className="about-separator" />
+
+                            <div className="claude-collaboration">
+                                <h2>
+                                    <img src={claudeLogo} alt="Claude AI" className="claude-title-icon" />
+                                    Claude AI Collaboration
+                                </h2>
+                                <hr className="about-separator" />
+                                <p>
+                                    Claude provided a free MCP server configuration that enabled me to explore large
+                                    language model and MCP server interactions for my thesis research. This hands-on
+                                    experimentation significantly advanced my diploma work, allowing me to implement and
+                                    test real-world AI integration scenarios.
+                                </p>
+                                <p>
+                                    In early 2026, I experimented with Claude AI for portfolio maintenance tasks.
+                                    Claude assisted with vulnerability fixes and version upgrades, becoming a GitHub
+                                    contributor during this trial. The experiment demonstrated AI's usefulness for
+                                    specific code maintenance scenarios.
+                                </p>
+                                <p>
+                                    Thanks to the Anthropic team for making these development tools accessible and
+                                    providing me a valuable learning experience!
+                                </p>
+                            </div>
                             <br/>
                             <br/>
                         </Grid>

@@ -631,3 +631,25 @@
     padding: 80px 20px 40px;
     overflow-y: auto;
 }
+
+/* Claude AI Collaboration Section */
+.claude-collaboration {
+    margin-top: 1em;
+}
+
+.claude-collaboration h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: clamp(1.5em, 5vw, 2.5em);
+    margin-bottom: 0.5em;
+}
+
+.claude-title-icon {
+    width: 1.2em;
+    height: 1.2em;
+}
