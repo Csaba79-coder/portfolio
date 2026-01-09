@@ -1,12 +1,12 @@
 .header-color, .landing-grid {
-    background: #9CECFB;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #0052D4, #65C7F7, #9CECFB);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #0052D4, #65C7F7, #9CECFB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #9CECFB;
+    background: -webkit-linear-gradient(to left, #0052D4, #65C7F7, #9CECFB);
+    background: linear-gradient(to left, #0052D4, #65C7F7, #9CECFB);
     text-align: center;
 }
 
 .landing-container {
-    min-height: 100vh; /* Ensure the container fills the viewport height */
+    min-height: 100vh;
     position: relative;
 }
 
@@ -14,7 +14,7 @@
     background-size: cover;
     background-position: center;
     text-align: center;
-    min-height: 100vh; /* Ensure the container fills the viewport height */
+    min-height: 100vh;
 }
 
 .background-image {
@@ -39,7 +39,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
-    min-height: 100vh; /* Ensure the container fills the viewport height */
+    min-height: 100vh;
 }
 
 @media (max-width: 1200px) {
@@ -60,35 +60,57 @@
     }
 }
 
+@media (max-width: 768px) {
+    .project-grid {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-grid {
+        padding: 15px 5px;
+    }
+}
+
 .about-body {
     display: flex;
-    align-items: flex-start; /* Align items to the top */
+    align-items: flex-start;
     justify-content: center;
     text-align: center;
-    margin: auto;
-    position: fixed;
+    min-height: 100vh;
     width: 100%;
-    height: 100%;
-    padding-top: 2em;
+    padding: 80px 20px 40px;
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 .about-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .about-body h2 {
     font-family: 'Anton', sans-serif;
     font-weight: bold;
     color: white;
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 0.5em;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
     .about-body h2 {
-        font-size: 2em;
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-body h2 {
+        font-size: 1.5em;
     }
 }
 
@@ -109,28 +131,63 @@
 }
 
 .about-body p, .about-body a {
-    padding: 2em;
+    padding: 1.5em;
     font-family: 'Oxygen', sans-serif;
     font-weight: bold;
     color: white;
-    grid-column: 2; /* Align the <p> tag to the middle column */
-    max-width: calc(100vw / 3); /* Set the max width to one third of the screen */
-    margin: 0 auto; /* Center the <p> tag horizontally within the column */
+    grid-column: 1;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.1em;
+    line-height: 1.6;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+    .about-body p, .about-body a {
+        padding: 1em;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-body p, .about-body a {
+        padding: 0.8em;
+        font-size: 0.95em;
+    }
 }
 
 .contact-body {
     text-align: center;
-    margin: auto;
-    position: fixed;
+    min-height: 100vh;
     width: 100%;
-    height: 100%;
-    justify-content: center;
-    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 80px 20px 40px;
+    overflow-y: auto;
 }
 
 .contact-body h2 {
     font-family: 'Anton', sans-serif;
     font-weight: bold;
+    font-size: 2em;
+}
+
+@media (max-width: 768px) {
+    .contact-body h2 {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-body h2 {
+        font-size: 1.4em;
+    }
 }
 
 .contact-title {
@@ -156,10 +213,27 @@
 .contact-grid {
     text-align: center;
     justify-content: center;
-    width: 80%;
-    height: 550px;
+    width: 90%;
+    max-width: 1200px;
+    min-height: 500px;
     background: white;
     margin-bottom: 20px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        width: 95%;
+        min-height: auto;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-grid {
+        width: 100%;
+        padding: 10px;
+    }
 }
 
 .contact-grid h2 {
@@ -172,7 +246,59 @@
 }
 
 .contact-list {
-    padding-left: 100px;
+    padding-left: 60px;
+}
+
+@media (max-width: 768px) {
+    .contact-list {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-list {
+        padding-left: 0;
+    }
+}
+
+.contact-list-item {
+    font-size: clamp(14px, 3vw, 20px);
+    font-family: 'Anton';
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-list-item-icon {
+    color: #0077B5;
+    font-size: clamp(1.5em, 4vw, 2em);
+    margin-right: 0.5em;
+    flex-shrink: 0;
+}
+
+.contact-list-item-text {
+    margin-left: 0.5em;
+    word-break: break-word;
+}
+
+@media (max-width: 480px) {
+    .contact-list-item {
+        font-size: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-list-item-icon {
+        margin-bottom: 0.5em;
+    }
+}
+
+.contact-left-description {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    padding-top: 1em;
+    font-size: clamp(14px, 2.5vw, 16px);
 }
 
 .avatar-img {
@@ -211,7 +337,19 @@
     font-size: 66px;
     font-weight: bold;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a text shadow for better visibility */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .banner-text h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-text h1 {
+        font-size: 32px;
+    }
 }
 
 .banner-text hr {
@@ -224,24 +362,70 @@
     color: white;
     font-size: 20px;
     padding: 1em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a text shadow for better visibility */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.tech-stack-text {
+    color: white;
+    font-size: clamp(14px, 4vw, 20px);
+    padding: clamp(10px, 3vw, 20px);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    margin: 10px;
+    border-radius: 5px;
+    max-width: 90%;
+    word-wrap: break-word;
 }
 
 .social-links {
     display: flex;
     justify-content: space-between;
-    width: 25%;
-    margin: auto;
+    width: 50%;
+    max-width: 400px;
+    margin: 20px auto;
     background-size: cover;
     background-position: center;
-    padding: 20px; /* Adjust the padding as needed */
-    background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity and color as needed */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a text shadow for better visibility */
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .social-links {
+        width: 70%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-links {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+.social-icon {
+    color: #0077B5;
+    font-size: clamp(2em, 6vw, 4em);
 }
 
 .linkedin-icon, .github-icon {
     color: white;
     font-size: 3em;
+}
+
+@media (max-width: 768px) {
+    .linkedin-icon, .github-icon {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .linkedin-icon, .github-icon {
+        font-size: 2em;
+    }
 }
 
 .footer {
@@ -251,18 +435,16 @@
     text-align: center;
 }
 
-/* Main container */
 .landing-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh; /* Full height of the viewport */
+    height: 100vh;
     padding: 20px;
 }
 
-/* Avatar and Introduction styling */
 .intro {
     margin-bottom: 30px;
 }
@@ -274,7 +456,6 @@
     object-fit: cover;
 }
 
-/* Resume Download Section */
 .resume-grid {
     display: flex;
     flex-direction: column;
@@ -394,4 +575,59 @@
         height: 3px;
         margin: 8px auto;
     }
+}
+
+.category-tabs {
+    padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .category-tabs .MuiTab-root {
+        font-size: 0.8rem;
+        min-width: auto;
+        padding: 6px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-tabs .MuiTab-root {
+        font-size: 0.7rem;
+        padding: 6px 4px;
+    }
+}
+
+/* Page Wrapper for Footer Positioning */
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    flex: 1;
+}
+
+/* About és Contact Body módosítás */
+.about-body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    min-height: calc(100vh - 64px); /* AppBar height levonása */
+    width: 100%;
+    padding: 80px 20px 40px;
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    overflow-y: auto;
+}
+
+.contact-body {
+    text-align: center;
+    min-height: calc(100vh - 64px); /* AppBar height levonása */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 80px 20px 40px;
+    overflow-y: auto;
 }

@@ -16,30 +16,28 @@ class Landing extends Component {
                             <h1>Full Stack & AI Developer</h1>
                         </div>
                         <hr className="landing-separator" />
-                        <p style={{ color: 'white', fontSize: '20px', padding: '20px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
-                            backgroundColor: 'rgba(0, 0, 0, 0.6)', display: 'inline-block' }}>
+                        <p className="tech-stack-text">
                             Java | Python | C# | HTML/CSS | Bootstrap | JavaScript | TypeScript | Spring | Angular | React
                         </p>
                         <br/>
-                        <p style={{ color: 'white', fontSize: '20px', padding: '20px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
-                            backgroundColor: 'rgba(0, 0, 0, 0.6)', display: 'inline-block' }}>
+                        <p className="tech-stack-text">
                             MySQL | PostgreSQL | H2 | MongoDB | Git | GitHub | Bitbucket | Jira | Confluence | Jenkins | Sonar
                         </p>
                         <div className="social-links">
                             <a href="https://www.linkedin.com/in/csabavadasz/" rel="noopener noreferrer" target="_blank">
-                                <FaLinkedin style={{ color: '#0077B5', fontSize: '4em' }}/>
+                                <FaLinkedin className="social-icon"/>
                             </a>
                             <a href="https://github.com/Csaba79-coder" rel="noopener noreferrer" target="_blank">
-                                <FaGithub style={{ color: '#0077B5', fontSize: '4em' }}/>
+                                <FaGithub className="social-icon"/>
                             </a>
                             <a href="https://www.facebook.com/vadasz.csaba.180" rel="noopener noreferrer" target="_blank">
-                                <FaFacebook style={{ color: '#0077B5', fontSize: '4em' }}/>
+                                <FaFacebook className="social-icon"/>
                             </a>
                             <a href="https://www.instagram.com/vadasz.csaba/" rel="noopener noreferrer" target="_blank">
-                                <FaInstagram style={{ color: '#0077B5', fontSize: '4em' }}/>
+                                <FaInstagram className="social-icon"/>
                             </a>
                             <a href="https://twitter.com/csaba_vadasz" rel="noopener noreferrer" target="_blank">
-                                <FaTwitter style={{ color: '#0077B5', fontSize: '4em' }}/>
+                                <FaTwitter className="social-icon"/>
                             </a>
                         </div>
                     </Grid>
