@@ -82,6 +82,30 @@
     font-family: 'Anton', sans-serif;
     font-weight: bold;
     color: white;
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+@media (max-width: 768px) {
+    .about-body h2 {
+        font-size: 2em;
+    }
+}
+
+.about-separator {
+    border: none;
+    height: 3px;
+    max-width: 50%;
+    margin: 20px auto;
+    background: linear-gradient(to right, transparent, #65C7F7, transparent);
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .about-separator {
+        max-width: 70%;
+        height: 2px;
+    }
 }
 
 .about-body p, .about-body a {
@@ -107,6 +131,65 @@
 .contact-body h2 {
     font-family: 'Anton', sans-serif;
     font-weight: bold;
+}
+
+.contact-title {
+    font-size: 2.5em !important;
+    margin-bottom: 0.3em;
+}
+
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 1.8em !important;
+    }
+}
+
+.contact-separator {
+    border: none;
+    height: 1px;
+    background: transparent;
+    position: relative;
+    max-width: 80%;
+    margin: 20px auto 30px;
+}
+
+.contact-separator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 1px;
+    background: linear-gradient(to left, #65C7F7, transparent);
+}
+
+.contact-separator::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 1px;
+    background: linear-gradient(to right, #65C7F7, transparent);
+}
+
+.contact-separator:nth-of-type(1)::before {
+    content: '◆';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #65C7F7;
+    font-size: 12px;
+    background: none;
+    width: auto;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .contact-separator {
+        max-width: 90%;
+    }
 }
 
 .contact-grid {
@@ -138,18 +221,35 @@
 }
 
 .avatar-img {
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .avatar-img {
+        height: 200px;
+        width: 200px;
+        margin-top: 20px;
+    }
 }
 
 .banner-text {
     opacity: 0.8;
-    width: 75%;
-    margin: auto;
+    width: auto;
+    max-width: 70%;
+    margin: 20px auto;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity and color as needed */
-    padding: 20px; /* Adjust the padding as needed */
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
+}
+
+@media (max-width: 768px) {
+    .banner-text {
+        max-width: 90%;
+        padding: 10px 20px;
+    }
 }
 
 .banner-text h1 {
@@ -227,6 +327,12 @@
     gap: 15px;
 }
 
+.resume-grid h3 {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
 .resume-buttons a {
     text-decoration: none;
 }
@@ -255,4 +361,81 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
+}
+
+.resume-page {
+    min-height: 100vh;
+    background: linear-gradient(to left, #0052D4, #65C7F7, #9CECFB);
+    display: flex;
+    flex-direction: column;
+}
+
+.resume-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.resume-content .intro {
+    margin-bottom: 30px;
+}
+
+.resume-content .avatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.resume-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.resume-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.resume-content h4 {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .resume-content h1 {
+        font-size: 2em;
+    }
+    .resume-content h2 {
+        font-size: 1.5em;
+    }
+    .resume-content .avatar {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.landing-separator {
+    border: none;
+    height: 4px;
+    max-width: 50%;
+    margin: 20px auto;
+    background: linear-gradient(to right, transparent, #65C7F7, #0052D4, #65C7F7, transparent);
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .landing-separator {
+        max-width: 70%;
+        height: 3px;
+    }
 }

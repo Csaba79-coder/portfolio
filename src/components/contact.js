@@ -71,8 +71,8 @@ class Contact extends Component {
                         </p>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <h2>Contact Me</h2>
-                        <hr />
+                        <h2 className="contact-title">Contact Me</h2>
+                        <hr className="contact-separator" />
 
                         <div className="contact-list">
                             <List>

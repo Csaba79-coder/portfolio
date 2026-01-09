@@ -36,7 +36,7 @@ function App() {
                       <MenuIcon />
                   </IconButton>
                   <Typography variant="h6" component={Link} to="/" sx={{ color: 'white', textDecoration: 'none', mr: 2 }}>
-                      Csaba79-coder
+                      Csaba79-coder 🏳️‍🌈
                   </Typography>
                   <Box sx={{ flexGrow: 1 }} />
                   <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
@@ -64,7 +64,7 @@ function App() {
                   onKeyDown={toggleDrawer(false)}
               >
                   <Typography variant="h6" component={Link} to="/" sx={{ p: 2, color: 'grey', textDecoration: 'none', display: 'block' }}>
-                      Csaba79-coder
+                      Csaba79-coder 🏳️‍🌈
                   </Typography>
                   <List>
                       {menuItems.map((item) => (

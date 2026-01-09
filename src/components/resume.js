@@ -6,9 +6,8 @@ import Footer from "./footer";
 class Resume extends Component {
   render() {
     return(
-        <div className="landing-container">
-            <div className="background-image"></div>
-            <div className="resume-downloads">
+        <div className="resume-page">
+            <div className="resume-content">
                 {/* Avatar and Introduction */}
                 <div className="intro">
                     <img src={avatarImg} alt="Avatar" className="avatar"/>
@@ -40,9 +39,8 @@ class Resume extends Component {
                         </div>
                     </Grid>
                 </Grid>
-
-                <Footer/>
             </div>
+            <Footer/>
         </div>
     )
   }
