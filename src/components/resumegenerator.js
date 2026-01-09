@@ -3,73 +3,9 @@ import { useParams, Link } from 'react-router-dom';
 import { Grid } from '@mui/material';
 import WorldFlag from 'react-world-flags';
 import Footer from "./footer";
-
-const translations = {
-    en: {
-        title: "Resume Generator",
-        freeBanner: "💰 100% Free - No registration required! Generate and download your PDF resume. Good luck with your job search!",
-        privacy: "ℹ️ Your data stays in your browser. Nothing is stored on our servers.",
-        colorTitle: "How to Choose a Color (Color Psychology)",
-        colors: [
-            { name: "Blue", hex: "#0052D4", desc: "Reliable & stable (IT, Finance)" },
-            { name: "Teal", hex: "#008B8B", desc: "Modern & tech-savvy (Startups, Tech)" },
-            { name: "Green", hex: "#2E7D32", desc: "Growth-oriented (Sales, Marketing)" },
-            { name: "Purple", hex: "#6A1B9A", desc: "Creative & innovative (Design, Creative)" },
-            { name: "Dark Grey", hex: "#424242", desc: "Professional (Management, Leadership)" },
-            { name: "Burgundy", hex: "#8B0000", desc: "Experienced & senior (Executive)" }
-        ],
-        photoLabel: "Include photo in resume",
-        uploadPhoto: "Upload Photo"
-    },
-    de: {
-        title: "Lebenslauf Generator",
-        freeBanner: "💰 100% Kostenlos - Keine Registrierung erforderlich! Erstellen und laden Sie Ihren PDF-Lebenslauf herunter. Viel Erfolg bei Ihrer Jobsuche!",
-        privacy: "ℹ️ Ihre Daten bleiben in Ihrem Browser. Nichts wird auf unseren Servern gespeichert.",
-        colorTitle: "Wie wähle ich eine Farbe (Farbpsychologie)",
-        colors: [
-            { name: "Blau", hex: "#0052D4", desc: "Zuverlässig & stabil (IT, Finanzen)" },
-            { name: "Türkis", hex: "#008B8B", desc: "Modern & technisch (Startups, Tech)" },
-            { name: "Grün", hex: "#2E7D32", desc: "Wachstumsorientiert (Vertrieb, Marketing)" },
-            { name: "Lila", hex: "#6A1B9A", desc: "Kreativ & innovativ (Design, Kreativ)" },
-            { name: "Dunkelgrau", hex: "#424242", desc: "Professionell (Management, Führung)" },
-            { name: "Bordeaux", hex: "#8B0000", desc: "Erfahren & senior (Führungskraft)" }
-        ],
-        photoLabel: "Foto im Lebenslauf einschließen",
-        uploadPhoto: "Foto hochladen"
-    },
-    it: {
-        title: "Generatore di CV",
-        freeBanner: "💰 100% Gratuito - Nessuna registrazione richiesta! Genera e scarica il tuo CV in PDF. In bocca al lupo per la tua ricerca di lavoro!",
-        privacy: "ℹ️ I tuoi dati rimangono nel tuo browser. Nulla viene memorizzato sui nostri server.",
-        colorTitle: "Come scegliere un colore (Psicologia del colore)",
-        colors: [
-            { name: "Blu", hex: "#0052D4", desc: "Affidabile & stabile (IT, Finanza)" },
-            { name: "Turchese", hex: "#008B8B", desc: "Moderno & tecnologico (Startup, Tech)" },
-            { name: "Verde", hex: "#2E7D32", desc: "Orientato alla crescita (Vendite, Marketing)" },
-            { name: "Viola", hex: "#6A1B9A", desc: "Creativo & innovativo (Design, Creativo)" },
-            { name: "Grigio scuro", hex: "#424242", desc: "Professionale (Management, Leadership)" },
-            { name: "Bordeaux", hex: "#8B0000", desc: "Esperto & senior (Dirigente)" }
-        ],
-        photoLabel: "Includi foto nel CV",
-        uploadPhoto: "Carica foto"
-    },
-    hu: {
-        title: "Önéletrajz Generátor",
-        freeBanner: "💰 100% Ingyenes - Regisztráció nem szükséges! Generáld és töltsd le PDF önéletrajzodat. Sok sikert az álláskereséshez!",
-        privacy: "ℹ️ Az adataid a böngésződben maradnak. Semmit nem tárolunk a szervereinken.",
-        colorTitle: "Hogyan válassz színt (Szín pszichológia)",
-        colors: [
-            { name: "Kék", hex: "#0052D4", desc: "Megbízható & stabil (IT, Pénzügy)" },
-            { name: "Türkiz", hex: "#008B8B", desc: "Modern & technológiai (Startup, Tech)" },
-            { name: "Zöld", hex: "#2E7D32", desc: "Növekedésorientált (Értékesítés, Marketing)" },
-            { name: "Lila", hex: "#6A1B9A", desc: "Kreatív & innovatív (Design, Kreatív)" },
-            { name: "Sötét szürke", hex: "#424242", desc: "Professzionális (Vezetés, Management)" },
-            { name: "Bordó", hex: "#8B0000", desc: "Tapasztalt & senior (Felsővezető)" }
-        ],
-        photoLabel: "Fotó az önéletrajzban",
-        uploadPhoto: "Fotó feltöltése"
-    }
-};
+import { translations, allLanguages } from './translations';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 const ResumeGenerator = () => {
     const { lang } = useParams();
@@ -77,6 +13,32 @@ const ResumeGenerator = () => {
 
     const [selectedColor, setSelectedColor] = useState("#0052D4");
     const [hasPhoto, setHasPhoto] = useState(false);
+    const [photoFile, setPhotoFile] = useState(null);
+    const [photoPreview, setPhotoPreview] = useState(null);
+
+    // Contact
+    const [name, setName] = useState("");
+    const [jobTitle, setJobTitle] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [website, setWebsite] = useState("");
+    const [linkedin, setLinkedin] = useState("");
+    const [location, setLocation] = useState("");
+    const [nationality, setNationality] = useState("");
+    const [drivingLicense, setDrivingLicense] = useState("");
+
+    // Skills
+    const [skillInput, setSkillInput] = useState("");
+    const [skills, setSkills] = useState([]);
+
+    // Languages
+    const [selectedLang, setSelectedLang] = useState("");
+    const [selectedLevel, setSelectedLevel] = useState("");
+    const [languages, setLanguages] = useState([]);
+    const [showLanguageLevels, setShowLanguageLevels] = useState(true);
+
+    // Preview
+    const [showPreview, setShowPreview] = useState(false);
 
     const flags = [
         { code: 'en', flag: 'GB', name: 'English' },
@@ -84,6 +46,89 @@ const ResumeGenerator = () => {
         { code: 'it', flag: 'IT', name: 'Italiano' },
         { code: 'hu', flag: 'HU', name: 'Magyar' }
     ];
+
+    const handlePhotoUpload = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setPhotoFile(file);
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPhotoPreview(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
+    const handleAddSkill = () => {
+        if (skillInput.trim()) {
+            setSkills([...skills, skillInput.trim()]);
+            setSkillInput("");
+        }
+    };
+
+    const handleRemoveSkill = (index) => {
+        setSkills(skills.filter((_, i) => i !== index));
+    };
+
+    const handleAddLanguage = () => {
+        if (selectedLang && selectedLevel) {
+            setLanguages([...languages, { language: selectedLang, level: selectedLevel }]);
+            setSelectedLang("");
+            setSelectedLevel("");
+        }
+    };
+
+    const handleRemoveLanguage = (index) => {
+        setLanguages(languages.filter((_, i) => i !== index));
+    };
+
+    const handleGeneratePDF = async () => {
+        try {
+            const cvElement = document.querySelector('.cv-preview');
+
+            // FORCE white background before capture
+            cvElement.style.backgroundColor = '#ffffff';
+            const mainElement = cvElement.querySelector('.cv-main');
+            if (mainElement) {
+                mainElement.style.backgroundColor = '#ffffff';
+                mainElement.style.color = '#333333';
+            }
+
+            // HTML to canvas
+            const canvas = await html2canvas(cvElement, {
+                scale: 2,
+                useCORS: true,
+                logging: false,
+                backgroundColor: '#ffffff' // FORCE white
+            });
+
+            const imgData = canvas.toDataURL('image/png');
+
+            // Create PDF (A4 size)
+            const pdf = new jsPDF('p', 'mm', 'a4');
+            const imgWidth = 210;
+            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+            pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+
+            // Generate filename: vadasz_csaba_hu.pdf
+            const cleanName = name
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/\s+/g, '_')
+                .replace(/[^a-z0-9_]/g, '')
+                .replace(/_+/g, '_')
+                .replace(/^_|_$/g, '');
+
+            const filename = `${cleanName}_${lang}.pdf`;
+
+            pdf.save(filename);
+        } catch (error) {
+            console.error('PDF generation error:', error);
+            alert('Error generating PDF. Please try again.');
+        }
+    };
 
     return (
         <div className='page-wrapper'>
@@ -149,14 +194,282 @@ const ResumeGenerator = () => {
 
                             {hasPhoto && (
                                 <div className="photo-upload">
-                                    <button className="upload-btn">{t.uploadPhoto}</button>
+                                    <input
+                                        type="file"
+                                        accept="image/*"
+                                        onChange={handlePhotoUpload}
+                                        id="photo-input"
+                                        style={{ display: 'none' }}
+                                    />
+                                    <label htmlFor="photo-input" className="upload-btn">
+                                        {t.uploadPhoto}
+                                    </label>
+                                    {photoPreview && (
+                                        <div className="photo-preview-box">
+                                            <img src={photoPreview} alt="Preview" className="photo-preview-img" />
+                                        </div>
+                                    )}
                                 </div>
                             )}
+                        </div>
+
+                        {/* FORM */}
+                        <div className="form-section">
+                            <h2>{t.contactInfo}</h2>
+                            <div className="form-grid">
+                                <input
+                                    type="text"
+                                    placeholder={t.name + " *"}
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    className="form-input"
+                                    required
+                                />
+                                <input
+                                    type="text"
+                                    placeholder={t.jobTitle + " *"}
+                                    value={jobTitle}
+                                    onChange={(e) => setJobTitle(e.target.value)}
+                                    className="form-input"
+                                    required
+                                />
+                                <input
+                                    type="email"
+                                    placeholder={t.email + " *"}
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className="form-input"
+                                    required
+                                />
+                                <input
+                                    type="tel"
+                                    placeholder={t.phone + " *"}
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)}
+                                    className="form-input"
+                                    required
+                                />
+                                <input
+                                    type="url"
+                                    placeholder={t.website}
+                                    value={website}
+                                    onChange={(e) => setWebsite(e.target.value)}
+                                    className="form-input"
+                                />
+                                <input
+                                    type="url"
+                                    placeholder={t.linkedin}
+                                    value={linkedin}
+                                    onChange={(e) => setLinkedin(e.target.value)}
+                                    className="form-input"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder={t.location}
+                                    value={location}
+                                    onChange={(e) => setLocation(e.target.value)}
+                                    className="form-input"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder={t.nationality}
+                                    value={nationality}
+                                    onChange={(e) => setNationality(e.target.value)}
+                                    className="form-input"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder={t.drivingLicense}
+                                    value={drivingLicense}
+                                    onChange={(e) => setDrivingLicense(e.target.value)}
+                                    className="form-input"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Skills */}
+                        <div className="form-section">
+                            <h2>{t.skillsTitle}</h2>
+                            <div className="add-item-row">
+                                <input
+                                    type="text"
+                                    placeholder={t.skillPlaceholder}
+                                    value={skillInput}
+                                    onChange={(e) => setSkillInput(e.target.value)}
+                                    onKeyPress={(e) => e.key === 'Enter' && handleAddSkill()}
+                                    className="form-input"
+                                />
+                                <button onClick={handleAddSkill} className="add-btn">{t.addSkill}</button>
+                            </div>
+                            <div className="items-list">
+                                {skills.map((skill, idx) => (
+                                    <div key={idx} className="list-item">
+                                        <span>{skill}</span>
+                                        <button onClick={() => handleRemoveSkill(idx)} className="remove-btn">×</button>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Languages */}
+                        <div className="form-section">
+                            <h2>{t.languagesTitle}</h2>
+                            <div className="add-item-row">
+                                <select
+                                    value={selectedLang}
+                                    onChange={(e) => setSelectedLang(e.target.value)}
+                                    className="form-select"
+                                >
+                                    <option value="">{t.selectLanguage}</option>
+                                    {allLanguages[lang].map((l, idx) => (
+                                        <option key={idx} value={l}>{l}</option>
+                                    ))}
+                                </select>
+                                <select
+                                    value={selectedLevel}
+                                    onChange={(e) => setSelectedLevel(e.target.value)}
+                                    className="form-select"
+                                >
+                                    <option value="">{t.selectLevel}</option>
+                                    {Object.entries(t.levels).map(([key, label]) => (
+                                        <option key={key} value={key}>{label}</option>
+                                    ))}
+                                </select>
+                                <button onClick={handleAddLanguage} className="add-btn">{t.addLanguage}</button>
+                            </div>
+                            <label className="checkbox-label">
+                                <input
+                                    type="checkbox"
+                                    checked={showLanguageLevels}
+                                    onChange={(e) => setShowLanguageLevels(e.target.checked)}
+                                />
+                                <span>{t.showLevels}</span>
+                            </label>
+                            <div className="items-list">
+                                {languages.map((l, idx) => (
+                                    <div key={idx} className="list-item">
+                                        <span>{l.language} - {l.level}</span>
+                                        <button onClick={() => handleRemoveLanguage(idx)} className="remove-btn">×</button>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Preview Button */}
+                        <div className="preview-btn-container">
+                            <button onClick={() => setShowPreview(true)} className="preview-main-btn">
+                                {t.previewBtn}
+                            </button>
                         </div>
 
                     </Grid>
                 </Grid>
             </div>
+
+            {/* Preview Modal */}
+            {showPreview && (
+                <div className="preview-modal">
+                    <div className="preview-content">
+                        <div className="preview-header">
+                            <button onClick={() => setShowPreview(false)} className="close-preview-btn">
+                                {t.closePreview}
+                            </button>
+                            <button onClick={handleGeneratePDF} className="generate-pdf-btn">
+                                {t.generatePDF}
+                            </button>
+                        </div>
+
+                        <div className="cv-preview" style={{
+                            backgroundColor: '#ffffff',
+                            colorScheme: 'light',
+                            filter: 'none',
+                            WebkitFilter: 'none'
+                        }}>
+                            <div className="cv-sidebar" style={{
+                                backgroundColor: selectedColor,
+                                color: '#ffffff'
+                            }}>
+                                {hasPhoto && photoPreview && (
+                                    <div className="cv-photo-container">
+                                        <img src={photoPreview} alt="Profile" className="cv-photo" />
+                                    </div>
+                                )}
+                                <h1 className="cv-name" style={{ color: '#ffffff' }}>{name || "Your Name"}</h1>
+                                <p className="cv-job-title" style={{ color: '#ffffff' }}>{jobTitle || "Job Title"}</p>
+
+                                <div className="cv-contact">
+                                    {email && <p style={{ color: '#ffffff' }}>✉️ {email}</p>}
+                                    {phone && <p style={{ color: '#ffffff' }}>📞 {phone}</p>}
+                                    {website && <p style={{ color: '#ffffff' }}>🌐 {website}</p>}
+                                    {linkedin && <p style={{ color: '#ffffff' }}>💼 LinkedIn</p>}
+                                    {location && <p style={{ color: '#ffffff' }}>📍 {location}</p>}
+                                    {nationality && <p style={{ color: '#ffffff' }}>🏳️ {nationality}</p>}
+                                    {drivingLicense && <p style={{ color: '#ffffff' }}>🚗 {drivingLicense}</p>}
+                                </div>
+
+                                {skills.length > 0 && (
+                                    <div className="cv-section">
+                                        <h3 style={{ color: '#ffffff' }}>{t.cvSections.skills}</h3>
+                                        <ul>
+                                            {skills.map((skill, idx) => (
+                                                <li key={idx} style={{ color: '#ffffff' }}>{skill}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+
+                                {languages.length > 0 && (
+                                    <div className="cv-section">
+                                        <h3 style={{ color: '#ffffff' }}>{t.cvSections.languages}</h3>
+                                        {languages.map((l, idx) => (
+                                            <div key={idx} className="cv-language">
+                                                <p style={{ color: '#ffffff' }}>{l.language}</p>
+                                                {showLanguageLevels && (
+                                                    <div className="language-level-display">
+                                                        <div className="language-bar-container">
+                                                            <div
+                                                                className="language-bar"
+                                                                style={{
+                                                                    width: `${
+                                                                        l.level === 'Native' ? 100 :
+                                                                            l.level === 'C2' ? 95 :
+                                                                                l.level === 'C1' ? 85 :
+                                                                                    l.level === 'B2' ? 75 :
+                                                                                        l.level === 'B1' ? 60 :
+                                                                                            l.level === 'A2' ? 40 : 20
+                                                                    }%`,
+                                                                    backgroundColor: '#ffffff'
+                                                                }}
+                                                            ></div>
+                                                        </div>
+                                                        <span className="language-level-text" style={{ color: '#ffffff' }}>({l.level})</span>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="cv-main" style={{
+                                backgroundColor: '#ffffff',
+                                color: '#333333',
+                                colorScheme: 'light'
+                            }}>
+                                <h2 style={{ color: '#0052D4' }}>{t.cvSections.profile}</h2>
+                                <p style={{ color: '#333333' }}>Profile section coming soon...</p>
+
+                                <h2 style={{ color: '#0052D4' }}>{t.cvSections.experience}</h2>
+                                <p style={{ color: '#333333' }}>Experience section coming soon...</p>
+
+                                <h2 style={{ color: '#0052D4' }}>{t.cvSections.education}</h2>
+                                <p style={{ color: '#333333' }}>Education section coming soon...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <Footer />
         </div>
     );
