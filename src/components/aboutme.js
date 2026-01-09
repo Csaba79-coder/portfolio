@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Cell, Grid} from "react-mdl";
+import { Grid } from "@mui/material";
 import Footer from "./footer";
 
 class About extends Component {
@@ -7,8 +7,8 @@ class About extends Component {
     render() {
         return(
             <div className='about-body'>
-                <Grid className='about-grid'>
-                    <Cell col={12}>
+                <Grid container className='about-grid'>
+                    <Grid item xs={12}>
                         <h2>About Me</h2>
                         <hr />
                         <p>
@@ -44,7 +44,7 @@ class About extends Component {
                         <br/>
                         <br/>
                         <Footer />
-                    </Cell>
+                    </Grid>
                 </Grid>
             </div>
         )

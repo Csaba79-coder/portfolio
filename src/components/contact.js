@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import {Grid, Cell, ListItem, ListItemContent, List} from 'react-mdl';
+import { Grid, List, ListItem, ListItemText, Button } from '@mui/material';
 import avatarImg from '../assets/CsabaVadasz2022.png';
 import {FaAddressCard, FaPhone} from 'react-icons/fa';
 import { IoIosMail } from 'react-icons/io';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import Button from '@material-ui/core/Button';
 import Footer from "./footer";
 
 class Contact extends Component {
@@ -29,8 +28,8 @@ class Contact extends Component {
 
         return (
             <div className='contact-body'>
-                <Grid className='contact-grid'>
-                    <Cell col={6}>
+                <Grid container className='contact-grid'>
+                    <Grid item xs={12} sm={6}>
                         <h2>Csaba Vadasz</h2>
                         {isChrome || isEdge ? (
                             <div>
@@ -70,43 +69,55 @@ class Contact extends Component {
                             I am an enthusiastic backend developer with a passion for learning and improving my skills.
                             I am always looking for new challenges and opportunities to grow. I am also interested in learning about ethical hacking and penetration testing.
                         </p>
-                    </Cell>
-                    <Cell col={6}>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
                         <h2>Contact Me</h2>
                         <hr />
 
                         <div className="contact-list">
                             <List>
                                 <ListItem>
-                                    <ListItemContent style={{ fontSize: '20px', fontFamily: 'Anton', display: 'flex', alignItems: 'center' }}>
-                                        <FaPhone style={{ color: '#0077B5', fontSize: '2em', marginRight: '0.5em' }}/>
-                                        <span style={{ marginLeft: '0.5em' }}>+36-30-235-63-04</span>
-                                    </ListItemContent>
+                                    <ListItemText
+                                        primary={
+                                            <div style={{ fontSize: '20px', fontFamily: 'Anton', display: 'flex', alignItems: 'center' }}>
+                                                <FaPhone style={{ color: '#0077B5', fontSize: '2em', marginRight: '0.5em' }}/>
+                                                <span style={{ marginLeft: '0.5em' }}>+36-30-235-63-04</span>
+                                            </div>
+                                        }
+                                    />
                                 </ListItem>
 
                                 <ListItem>
-                                    <ListItemContent style={{ fontSize: '20px', fontFamily: 'Anton', display: 'flex', alignItems: 'center' }}>
-                                        <IoIosMail style={{ color: '#0077B5', fontSize: '2em', marginRight: '0.5em' }}/>
-                                        <span style={{ marginLeft: '0.5em' }}>
-                                            csabavadasz79@gmail.com
-                                        </span>
-                                        <CopyToClipboard text="csabavadasz79@gmail.com">
-                                            <Button style={{ color: '#0077B5', marginLeft: '0.5em' }} variant="outlined" color="primary" onClick={() => alert('Email copied to clipboard!')}>
-                                                Copy
-                                            </Button>
-                                        </CopyToClipboard>
-                                    </ListItemContent>
+                                    <ListItemText
+                                        primary={
+                                            <div style={{ fontSize: '20px', fontFamily: 'Anton', display: 'flex', alignItems: 'center' }}>
+                                                <IoIosMail style={{ color: '#0077B5', fontSize: '2em', marginRight: '0.5em' }}/>
+                                                <span style={{ marginLeft: '0.5em' }}>
+                                                    csabavadasz79@gmail.com
+                                                </span>
+                                                <CopyToClipboard text="csabavadasz79@gmail.com">
+                                                    <Button style={{ color: '#0077B5', marginLeft: '0.5em' }} variant="outlined" color="primary" onClick={() => alert('Email copied to clipboard!')}>
+                                                        Copy
+                                                    </Button>
+                                                </CopyToClipboard>
+                                            </div>
+                                        }
+                                    />
                                 </ListItem>
 
                                 <ListItem>
-                                    <ListItemContent style={{ fontSize: '20px', fontFamily: 'Anton', display: 'flex', alignItems: 'center' }}>
-                                        <FaAddressCard style={{ color: '#0077B5', fontSize: '2em', marginRight: '0.5em' }}/>
-                                        <span style={{ marginLeft: '0.5em' }}>Budakalasz, Hungary, Europe</span>
-                                    </ListItemContent>
+                                    <ListItemText
+                                        primary={
+                                            <div style={{ fontSize: '20px', fontFamily: 'Anton', display: 'flex', alignItems: 'center' }}>
+                                                <FaAddressCard style={{ color: '#0077B5', fontSize: '2em', marginRight: '0.5em' }}/>
+                                                <span style={{ marginLeft: '0.5em' }}>Budakalasz, Hungary, Europe</span>
+                                            </div>
+                                        }
+                                    />
                                 </ListItem>
                             </List>
                         </div>
-                    </Cell>
+                    </Grid>
                 </Grid>
                 <Footer />
             </div>
