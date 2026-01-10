@@ -121,6 +121,12 @@ const ResumeGenerator = () => {
 
                     if (sidebar) {
                         sidebar.style.setProperty('filter', 'none', 'important');
+
+                        // Force white text color for all sidebar elements
+                        const allSidebarElements = sidebar.querySelectorAll('*');
+                        allSidebarElements.forEach(el => {
+                            el.style.setProperty('color', 'white', 'important');
+                        });
                     }
                 }
             });
