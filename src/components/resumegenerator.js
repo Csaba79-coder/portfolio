@@ -169,7 +169,7 @@ const ResumeGenerator = () => {
                             {t.privacy}
                         </div>
 
-                        {/* Színválasztó */}
+                        {/* Color selector */}
                         <div className="config-section">
                             <h3>{t.colorTitle}</h3>
                             <div className="color-selector">
@@ -192,7 +192,7 @@ const ResumeGenerator = () => {
                             </div>
                         </div>
 
-                        {/* Fotó opció */}
+                        {/* Photo option */}
                         <div className="config-section">
                             <label className="photo-checkbox">
                                 <input

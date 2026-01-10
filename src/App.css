@@ -607,13 +607,13 @@
     flex: 1;
 }
 
-/* About és Contact Body módosítás */
+/* About and Contact body layout */
 .about-body {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     text-align: center;
-    min-height: calc(100vh - 64px); /* AppBar height levonása */
+    min-height: calc(100vh - 64px);
     width: 100%;
     padding: 80px 20px 40px;
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
@@ -622,7 +622,7 @@
 
 .contact-body {
     text-align: center;
-    min-height: calc(100vh - 64px); /* AppBar height levonása */
+    min-height: calc(100vh - 64px);
     width: 100%;
     display: flex;
     flex-direction: column;
