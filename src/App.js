@@ -19,6 +19,7 @@ function App() {
     { text: 'About Me', path: '/about-me' },
     { text: 'Projects', path: '/projects' },
     { text: 'Resume', path: '/resume' },
+    { text: 'Resume Generator', path: '/resume-generator/en' },
     { text: 'Contact', path: '/contact' }
   ];
 
