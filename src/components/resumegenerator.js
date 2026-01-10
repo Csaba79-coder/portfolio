@@ -390,7 +390,11 @@ const ResumeGenerator = () => {
                         </div>
 
                         <div className="cv-preview">
-                            <div className="cv-sidebar" style={{ backgroundColor: selectedColor }}>
+                            <div className="cv-sidebar" style={{
+                                backgroundColor: selectedColor,
+                                color: 'white',
+                                minHeight: '1188px'
+                            }}>
                                 {hasPhoto && photoPreview && (
                                     <div className="cv-photo-container">
                                         <img src={photoPreview} alt="Profile" className="cv-photo" />
