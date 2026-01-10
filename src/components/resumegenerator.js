@@ -7,13 +7,47 @@ import { translations, allLanguages } from './translations';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
+// Helper function to force light mode for PDF generation
+const applyLightModeForPDF = (clonedDoc) => {
+    const preview = clonedDoc.querySelector('.cv-preview');
+    const main = clonedDoc.querySelector('.cv-main');
+    const sidebar = clonedDoc.querySelector('.cv-sidebar');
+
+    // Force light mode on document
+    clonedDoc.documentElement.style.setProperty('color-scheme', 'light', 'important');
+    clonedDoc.body.style.setProperty('background-color', '#ffffff', 'important');
+
+    if (preview) {
+        preview.style.setProperty('background-color', '#ffffff', 'important');
+        preview.style.setProperty('filter', 'none', 'important');
+        preview.style.setProperty('-webkit-filter', 'none', 'important');
+    }
+
+    if (main) {
+        main.style.setProperty('background-color', '#ffffff', 'important');
+        main.style.setProperty('color', '#000000', 'important');
+        main.style.setProperty('filter', 'none', 'important');
+
+        const allElements = main.querySelectorAll('*');
+        allElements.forEach(el => {
+            el.style.setProperty('color', '#000000', 'important');
+            el.style.setProperty('background-color', 'transparent', 'important');
+            el.style.setProperty('filter', 'none', 'important');
+            el.style.setProperty('border-color', '#000000', 'important');
+        });
+    }
+
+    if (sidebar) {
+        sidebar.style.setProperty('filter', 'none', 'important');
+    }
+};
+
 const ResumeGenerator = () => {
     const { lang } = useParams();
     const t = translations[lang] || translations.en;
 
     const [selectedColor, setSelectedColor] = useState("#0052D4");
     const [hasPhoto, setHasPhoto] = useState(false);
-    const [photoFile, setPhotoFile] = useState(null);
     const [photoPreview, setPhotoPreview] = useState(null);
 
     // Contact
@@ -50,7 +84,6 @@ const ResumeGenerator = () => {
     const handlePhotoUpload = (e) => {
         const file = e.target.files[0];
         if (file) {
-            setPhotoFile(file);
             const reader = new FileReader();
             reader.onloadend = () => {
                 setPhotoPreview(reader.result);
@@ -87,44 +120,11 @@ const ResumeGenerator = () => {
             const cvElement = document.querySelector('.cv-preview');
 
             const canvas = await html2canvas(cvElement, {
-                scale: 2, // A 3-as scale néha memóriahibát dob gyengébb gépeken, a 2-es is tökéletes
+                scale: 2,
                 useCORS: true,
                 logging: false,
                 backgroundColor: '#ffffff',
-                onclone: (clonedDoc) => {
-                    const preview = clonedDoc.querySelector('.cv-preview');
-                    const main = clonedDoc.querySelector('.cv-main');
-                    const sidebar = clonedDoc.querySelector('.cv-sidebar');
-
-                    // 1. A teljes dokumentum kényszerítése világos módra
-                    clonedDoc.documentElement.style.setProperty('color-scheme', 'light', 'important');
-                    clonedDoc.body.style.setProperty('background-color', '#ffffff', 'important');
-
-                    if (preview) {
-                        // Itt is setProperty kell, hogy ne vigye át a sötét szűrőt
-                        preview.style.setProperty('background-color', '#ffffff', 'important');
-                        preview.style.setProperty('filter', 'none', 'important');
-                        preview.style.setProperty('-webkit-filter', 'none', 'important');
-                    }
-
-                    if (main) {
-                        main.style.setProperty('background-color', '#ffffff', 'important');
-                        main.style.setProperty('color', '#000000', 'important');
-                        main.style.setProperty('filter', 'none', 'important');
-
-                        const all = main.querySelectorAll('*');
-                        all.forEach(el => {
-                            el.style.setProperty('color', '#000000', 'important');
-                            el.style.setProperty('background-color', 'transparent', 'important');
-                            el.style.setProperty('filter', 'none', 'important');
-                            el.style.setProperty('border-color', '#000000', 'important');
-                        });
-                    }
-
-                    if (sidebar) {
-                        sidebar.style.setProperty('filter', 'none', 'important');
-                    }
-                }
+                onclone: applyLightModeForPDF
             });
 
             const imgData = canvas.toDataURL('image/png');
@@ -137,7 +137,7 @@ const ResumeGenerator = () => {
             const cleanName = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '_');
             pdf.save(`${cleanName}_${lang}.pdf`);
         } catch (error) {
-            console.error('PDF error:', error);
+            console.error('PDF generation error:', error);
         }
     };
 
@@ -378,7 +378,7 @@ const ResumeGenerator = () => {
             </div>
 
             {showPreview && (
-                <div className="preview-modal" style={{ backgroundColor: 'rgba(0,0,0,0.85)' }}>
+                <div className="preview-modal">
                     <div className="preview-content">
                         <div className="preview-header">
                             <button onClick={() => setShowPreview(false)} className="close-preview-btn">
@@ -389,8 +389,7 @@ const ResumeGenerator = () => {
                             </button>
                         </div>
 
-                        {/* Itt kezdődik a lényeg: explicit fehér háttér a teljes konténerre */}
-                        <div className="cv-preview" style={{ backgroundColor: '#ffffff', colorScheme: 'light', filter: 'none' }}>
+                        <div className="cv-preview">
                             <div className="cv-sidebar" style={{ backgroundColor: selectedColor }}>
                                 {hasPhoto && photoPreview && (
                                     <div className="cv-photo-container">
@@ -453,27 +452,15 @@ const ResumeGenerator = () => {
                                 )}
                             </div>
 
-                            <div className="cv-main" style={{
-                                backgroundImage: 'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=")',
-                                backgroundRepeat: 'repeat',
-                                color: '#000000',
-                                WebkitTextFillColor: '#000000',
-                                filter: 'none'
-                            }}>
-                                <h2 style={{ color: '#000000', borderBottom: '2px solid #000000', backgroundColor: 'transparent' }}>
-                                    {t.cvSections.profile}
-                                </h2>
-                                <p style={{ color: '#000000' }}>Profile section coming soon...</p>
+                            <div className="cv-main">
+                                <h2>{t.cvSections.profile}</h2>
+                                <p>Profile section coming soon...</p>
 
-                                <h2 style={{ color: '#000000', borderBottom: '2px solid #000000', backgroundColor: 'transparent' }}>
-                                    {t.cvSections.experience}
-                                </h2>
-                                <p style={{ color: '#000000' }}>Experience section coming soon...</p>
+                                <h2>{t.cvSections.experience}</h2>
+                                <p>Experience section coming soon...</p>
 
-                                <h2 style={{ color: '#000000', borderBottom: '2px solid #000000', backgroundColor: 'transparent' }}>
-                                    {t.cvSections.education}
-                                </h2>
-                                <p style={{ color: '#000000' }}>Education section coming soon...</p>
+                                <h2>{t.cvSections.education}</h2>
+                                <p>Education section coming soon...</p>
                             </div>
                         </div>
                     </div>
