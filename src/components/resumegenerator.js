@@ -121,6 +121,9 @@ const ResumeGenerator = () => {
 
                     if (sidebar) {
                         sidebar.style.setProperty('filter', 'none', 'important');
+                        sidebar.style.setProperty('height', '100%', 'important');
+                        sidebar.style.setProperty('min-height', '1188px', 'important');
+                        sidebar.style.setProperty('padding-bottom', '0', 'important');
                     }
                 }
             });
