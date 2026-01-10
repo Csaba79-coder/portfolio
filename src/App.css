@@ -1238,6 +1238,7 @@
     text-align: center;
     margin: 10px 0;
     word-wrap: break-word;
+    color: white;
 }
 
 .cv-job-title {
@@ -1245,21 +1246,25 @@
     font-family: 'Oxygen', sans-serif;
     font-size: 1.1em;
     margin-bottom: 30px;
+    color: white;
 }
 
 .cv-contact {
     font-family: 'Oxygen', sans-serif;
     font-size: 0.9em;
     margin-bottom: 30px;
+    color: white;
 }
 
 .cv-contact p {
     margin: 8px 0;
     word-wrap: break-word;
+    color: white;
 }
 
 .cv-section {
     margin-bottom: 30px;
+    color: white;
 }
 
 .cv-section h3 {
@@ -1268,31 +1273,37 @@
     margin-bottom: 15px;
     border-bottom: 2px solid white;
     padding-bottom: 5px;
+    color: white;
 }
 
 .cv-section ul {
     list-style: none;
     padding: 0;
     font-family: 'Oxygen', sans-serif;
+    color: white;
 }
 
 .cv-section li {
     margin: 8px 0;
+    color: white;
 }
 
 .cv-language {
     margin-bottom: 15px;
+    color: white;
 }
 
 .cv-language p {
     margin: 5px 0;
     font-family: 'Oxygen', sans-serif;
+    color: white;
 }
 
 .language-level-display {
     display: flex;
     align-items: center;
     gap: 8px;
+    color: white;
 }
 
 .language-bar-container {
@@ -1312,6 +1323,7 @@
 .language-level-text {
     font-size: 0.9em;
     white-space: nowrap;
+    color: white;
 }
 
 .cv-main {
