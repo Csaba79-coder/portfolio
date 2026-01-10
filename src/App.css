@@ -806,7 +806,6 @@
 
 /* Config Sections */
 .config-section {
-    background: rgba(255, 255, 255, 0.95);
     padding: 25px;
     border-radius: 10px;
     margin: 0 auto 30px;
@@ -954,7 +953,6 @@
 
 /* Form Sections */
 .form-section {
-    background: rgba(255, 255, 255, 0.95);
     padding: 25px;
     border-radius: 10px;
     margin: 0 auto 30px;

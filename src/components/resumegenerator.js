@@ -13,7 +13,6 @@ const ResumeGenerator = () => {
 
     const [selectedColor, setSelectedColor] = useState("#0052D4");
     const [hasPhoto, setHasPhoto] = useState(false);
-    const [photoFile, setPhotoFile] = useState(null);
     const [photoPreview, setPhotoPreview] = useState(null);
 
     // Contact
@@ -50,7 +49,6 @@ const ResumeGenerator = () => {
     const handlePhotoUpload = (e) => {
         const file = e.target.files[0];
         if (file) {
-            setPhotoFile(file);
             const reader = new FileReader();
             reader.onloadend = () => {
                 setPhotoPreview(reader.result);
