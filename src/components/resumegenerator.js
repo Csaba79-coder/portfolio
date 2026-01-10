@@ -13,7 +13,6 @@ const ResumeGenerator = () => {
 
     const [selectedColor, setSelectedColor] = useState("#0052D4");
     const [hasPhoto, setHasPhoto] = useState(false);
-    const [photoFile, setPhotoFile] = useState(null);
     const [photoPreview, setPhotoPreview] = useState(null);
 
     // Contact
@@ -50,7 +49,6 @@ const ResumeGenerator = () => {
     const handlePhotoUpload = (e) => {
         const file = e.target.files[0];
         if (file) {
-            setPhotoFile(file);
             const reader = new FileReader();
             reader.onloadend = () => {
                 setPhotoPreview(reader.result);
@@ -169,7 +167,7 @@ const ResumeGenerator = () => {
                             {t.privacy}
                         </div>
 
-                        {/* Színválasztó */}
+                        {/* Color selector */}
                         <div className="config-section">
                             <h3>{t.colorTitle}</h3>
                             <div className="color-selector">
@@ -192,7 +190,7 @@ const ResumeGenerator = () => {
                             </div>
                         </div>
 
-                        {/* Fotó opció */}
+                        {/* Photo option */}
                         <div className="config-section">
                             <label className="photo-checkbox">
                                 <input
@@ -389,7 +387,7 @@ const ResumeGenerator = () => {
                             </button>
                         </div>
 
-                        {/* Itt kezdődik a lényeg: explicit fehér háttér a teljes konténerre */}
+                        {/* CV Preview */}
                         <div className="cv-preview" style={{ backgroundColor: '#ffffff', colorScheme: 'light', filter: 'none' }}>
                             <div className="cv-sidebar" style={{ backgroundColor: selectedColor }}>
                                 {hasPhoto && photoPreview && (
