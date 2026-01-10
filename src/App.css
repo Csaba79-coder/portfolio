@@ -1137,7 +1137,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.9) !important;
     z-index: 9999;
     overflow-y: auto;
     padding: 20px;
@@ -1192,19 +1192,26 @@
     background: #1B5E20;
 }
 
-/* CV Preview */
+/* CV Preview – FORCE LIGHT MODE, NO BROWSER DARK OVERRIDE */
 .cv-preview {
     display: grid;
     grid-template-columns: 300px 1fr;
-    background: #ffffff !important;
     min-height: 1188px;
+    background-color: #ffffff !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    color-scheme: light !important; /* FORCE light mode */
+    color-scheme: light;
+    -webkit-color-scheme: light;
+}
+
+.cv-preview,
+.cv-preview * {
+    forced-color-adjust: none;
 }
 
 @media (max-width: 768px) {
     .cv-preview {
-        grid-template-columns: 1fr;
+        grid-template-columns: 300px 1fr !important;
+        min-width: 900px;
     }
 }
 
@@ -1311,15 +1318,23 @@
 
 .cv-main {
     padding: 40px;
-    color: #333 !important;
-    background: white !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #333333 !important;
     min-height: 1188px;
-    color-scheme: light !important; /* FORCE light mode */
+    color-scheme: light !important;
+    -webkit-color-scheme: light !important;
+}
+
+.cv-main *,
+.cv-main p,
+.cv-main li {
+    color: #333333 !important;
 }
 
 .cv-main h2 {
     font-family: 'Anton', sans-serif;
-    color: #0052D4;
+    color: #0052D4 !important;
     font-size: 1.5em;
     margin-top: 30px;
     margin-bottom: 15px;
@@ -1330,6 +1345,28 @@
 .cv-main p {
     font-family: 'Oxygen', sans-serif;
     line-height: 1.6;
+    color: #333333 !important;
+}
+
+/* Dark mode explicit override */
+@media (prefers-color-scheme: dark) {
+    .cv-modal,
+    .cv-preview,
+    .cv-main {
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+        color: #333333 !important;
+    }
+}
+
+body.dark-mode .cv-main {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #333333 !important;
+}
+
+body.dark-mode .cv-main * {
+    color: #333333 !important;
 }
 
 /* Preview Modal - FORCE dark background */
@@ -1344,4 +1381,20 @@
     overflow-y: auto;
     padding: 20px;
     box-sizing: border-box;
+}
+
+/* FORCE LIGHT MODE - GLOBAL */
+.config-section, .form-section {
+    color-scheme: light !important;
+    -webkit-color-scheme: light !important;
+}
+
+.form-input, .form-select {
+    color-scheme: light !important;
+    -webkit-color-scheme: light !important;
+}
+
+.form-input::placeholder {
+    color: #999999 !important;
+    opacity: 1 !important;
 }

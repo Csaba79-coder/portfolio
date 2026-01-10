@@ -86,47 +86,58 @@ const ResumeGenerator = () => {
         try {
             const cvElement = document.querySelector('.cv-preview');
 
-            // FORCE white background before capture
-            cvElement.style.backgroundColor = '#ffffff';
-            const mainElement = cvElement.querySelector('.cv-main');
-            if (mainElement) {
-                mainElement.style.backgroundColor = '#ffffff';
-                mainElement.style.color = '#333333';
-            }
-
-            // HTML to canvas
             const canvas = await html2canvas(cvElement, {
-                scale: 2,
+                scale: 2, // A 3-as scale néha memóriahibát dob gyengébb gépeken, a 2-es is tökéletes
                 useCORS: true,
                 logging: false,
-                backgroundColor: '#ffffff' // FORCE white
+                backgroundColor: '#ffffff',
+                onclone: (clonedDoc) => {
+                    const preview = clonedDoc.querySelector('.cv-preview');
+                    const main = clonedDoc.querySelector('.cv-main');
+                    const sidebar = clonedDoc.querySelector('.cv-sidebar');
+
+                    // 1. A teljes dokumentum kényszerítése világos módra
+                    clonedDoc.documentElement.style.setProperty('color-scheme', 'light', 'important');
+                    clonedDoc.body.style.setProperty('background-color', '#ffffff', 'important');
+
+                    if (preview) {
+                        // Itt is setProperty kell, hogy ne vigye át a sötét szűrőt
+                        preview.style.setProperty('background-color', '#ffffff', 'important');
+                        preview.style.setProperty('filter', 'none', 'important');
+                        preview.style.setProperty('-webkit-filter', 'none', 'important');
+                    }
+
+                    if (main) {
+                        main.style.setProperty('background-color', '#ffffff', 'important');
+                        main.style.setProperty('color', '#000000', 'important');
+                        main.style.setProperty('filter', 'none', 'important');
+
+                        const all = main.querySelectorAll('*');
+                        all.forEach(el => {
+                            el.style.setProperty('color', '#000000', 'important');
+                            el.style.setProperty('background-color', 'transparent', 'important');
+                            el.style.setProperty('filter', 'none', 'important');
+                            el.style.setProperty('border-color', '#000000', 'important');
+                        });
+                    }
+
+                    if (sidebar) {
+                        sidebar.style.setProperty('filter', 'none', 'important');
+                    }
+                }
             });
 
             const imgData = canvas.toDataURL('image/png');
-
-            // Create PDF (A4 size)
             const pdf = new jsPDF('p', 'mm', 'a4');
             const imgWidth = 210;
             const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
             pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
 
-            // Generate filename: vadasz_csaba_hu.pdf
-            const cleanName = name
-                .toLowerCase()
-                .normalize('NFD')
-                .replace(/[\u0300-\u036f]/g, '')
-                .replace(/\s+/g, '_')
-                .replace(/[^a-z0-9_]/g, '')
-                .replace(/_+/g, '_')
-                .replace(/^_|_$/g, '');
-
-            const filename = `${cleanName}_${lang}.pdf`;
-
-            pdf.save(filename);
+            const cleanName = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '_');
+            pdf.save(`${cleanName}_${lang}.pdf`);
         } catch (error) {
-            console.error('PDF generation error:', error);
-            alert('Error generating PDF. Please try again.');
+            console.error('PDF error:', error);
         }
     };
 
@@ -366,9 +377,8 @@ const ResumeGenerator = () => {
                 </Grid>
             </div>
 
-            {/* Preview Modal */}
             {showPreview && (
-                <div className="preview-modal">
+                <div className="preview-modal" style={{ backgroundColor: 'rgba(0,0,0,0.85)' }}>
                     <div className="preview-content">
                         <div className="preview-header">
                             <button onClick={() => setShowPreview(false)} className="close-preview-btn">
@@ -379,40 +389,33 @@ const ResumeGenerator = () => {
                             </button>
                         </div>
 
-                        <div className="cv-preview" style={{
-                            backgroundColor: '#ffffff',
-                            colorScheme: 'light',
-                            filter: 'none',
-                            WebkitFilter: 'none'
-                        }}>
-                            <div className="cv-sidebar" style={{
-                                backgroundColor: selectedColor,
-                                color: '#ffffff'
-                            }}>
+                        {/* Itt kezdődik a lényeg: explicit fehér háttér a teljes konténerre */}
+                        <div className="cv-preview" style={{ backgroundColor: '#ffffff', colorScheme: 'light', filter: 'none' }}>
+                            <div className="cv-sidebar" style={{ backgroundColor: selectedColor }}>
                                 {hasPhoto && photoPreview && (
                                     <div className="cv-photo-container">
                                         <img src={photoPreview} alt="Profile" className="cv-photo" />
                                     </div>
                                 )}
-                                <h1 className="cv-name" style={{ color: '#ffffff' }}>{name || "Your Name"}</h1>
-                                <p className="cv-job-title" style={{ color: '#ffffff' }}>{jobTitle || "Job Title"}</p>
+                                <h1 className="cv-name">{name || "Your Name"}</h1>
+                                <p className="cv-job-title">{jobTitle || "Job Title"}</p>
 
                                 <div className="cv-contact">
-                                    {email && <p style={{ color: '#ffffff' }}>✉️ {email}</p>}
-                                    {phone && <p style={{ color: '#ffffff' }}>📞 {phone}</p>}
-                                    {website && <p style={{ color: '#ffffff' }}>🌐 {website}</p>}
-                                    {linkedin && <p style={{ color: '#ffffff' }}>💼 LinkedIn</p>}
-                                    {location && <p style={{ color: '#ffffff' }}>📍 {location}</p>}
-                                    {nationality && <p style={{ color: '#ffffff' }}>🏳️ {nationality}</p>}
-                                    {drivingLicense && <p style={{ color: '#ffffff' }}>🚗 {drivingLicense}</p>}
+                                    {email && <p>✉️ {email}</p>}
+                                    {phone && <p>📞 {phone}</p>}
+                                    {website && <p>🌐 {website}</p>}
+                                    {linkedin && <p>💼 LinkedIn</p>}
+                                    {location && <p>📍 {location}</p>}
+                                    {nationality && <p>🏳️ {nationality}</p>}
+                                    {drivingLicense && <p>🚗 {drivingLicense}</p>}
                                 </div>
 
                                 {skills.length > 0 && (
                                     <div className="cv-section">
-                                        <h3 style={{ color: '#ffffff' }}>{t.cvSections.skills}</h3>
+                                        <h3>{t.cvSections.skills}</h3>
                                         <ul>
                                             {skills.map((skill, idx) => (
-                                                <li key={idx} style={{ color: '#ffffff' }}>{skill}</li>
+                                                <li key={idx}>{skill}</li>
                                             ))}
                                         </ul>
                                     </div>
@@ -420,10 +423,10 @@ const ResumeGenerator = () => {
 
                                 {languages.length > 0 && (
                                     <div className="cv-section">
-                                        <h3 style={{ color: '#ffffff' }}>{t.cvSections.languages}</h3>
+                                        <h3>{t.cvSections.languages}</h3>
                                         {languages.map((l, idx) => (
                                             <div key={idx} className="cv-language">
-                                                <p style={{ color: '#ffffff' }}>{l.language}</p>
+                                                <p>{l.language}</p>
                                                 {showLanguageLevels && (
                                                     <div className="language-level-display">
                                                         <div className="language-bar-container">
@@ -437,12 +440,11 @@ const ResumeGenerator = () => {
                                                                                     l.level === 'B2' ? 75 :
                                                                                         l.level === 'B1' ? 60 :
                                                                                             l.level === 'A2' ? 40 : 20
-                                                                    }%`,
-                                                                    backgroundColor: '#ffffff'
+                                                                    }%`
                                                                 }}
                                                             ></div>
                                                         </div>
-                                                        <span className="language-level-text" style={{ color: '#ffffff' }}>({l.level})</span>
+                                                        <span className="language-level-text">({l.level})</span>
                                                     </div>
                                                 )}
                                             </div>
@@ -452,18 +454,26 @@ const ResumeGenerator = () => {
                             </div>
 
                             <div className="cv-main" style={{
-                                backgroundColor: '#ffffff',
-                                color: '#333333',
-                                colorScheme: 'light'
+                                backgroundImage: 'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=")',
+                                backgroundRepeat: 'repeat',
+                                color: '#000000',
+                                WebkitTextFillColor: '#000000',
+                                filter: 'none'
                             }}>
-                                <h2 style={{ color: '#0052D4' }}>{t.cvSections.profile}</h2>
-                                <p style={{ color: '#333333' }}>Profile section coming soon...</p>
+                                <h2 style={{ color: '#000000', borderBottom: '2px solid #000000', backgroundColor: 'transparent' }}>
+                                    {t.cvSections.profile}
+                                </h2>
+                                <p style={{ color: '#000000' }}>Profile section coming soon...</p>
 
-                                <h2 style={{ color: '#0052D4' }}>{t.cvSections.experience}</h2>
-                                <p style={{ color: '#333333' }}>Experience section coming soon...</p>
+                                <h2 style={{ color: '#000000', borderBottom: '2px solid #000000', backgroundColor: 'transparent' }}>
+                                    {t.cvSections.experience}
+                                </h2>
+                                <p style={{ color: '#000000' }}>Experience section coming soon...</p>
 
-                                <h2 style={{ color: '#0052D4' }}>{t.cvSections.education}</h2>
-                                <p style={{ color: '#333333' }}>Education section coming soon...</p>
+                                <h2 style={{ color: '#000000', borderBottom: '2px solid #000000', backgroundColor: 'transparent' }}>
+                                    {t.cvSections.education}
+                                </h2>
+                                <p style={{ color: '#000000' }}>Education section coming soon...</p>
                             </div>
                         </div>
                     </div>
