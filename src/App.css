@@ -96,7 +96,7 @@
 .about-body h2 {
     font-family: 'Anton', sans-serif;
     font-weight: bold;
-    color: white;
+    color: white !important;
     font-size: 2.5em;
     margin-bottom: 0.5em;
     box-sizing: border-box;
@@ -134,7 +134,7 @@
     padding: 1.5em;
     font-family: 'Oxygen', sans-serif;
     font-weight: bold;
-    color: white;
+    color: white !important;
     grid-column: 1;
     max-width: 100%;
     width: 100%;
@@ -336,7 +336,7 @@
 .banner-text h1 {
     font-size: 66px;
     font-weight: bold;
-    color: white;
+    color: white !important;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
@@ -359,14 +359,14 @@
 }
 
 .banner-text p {
-    color: white;
+    color: white !important;
     font-size: 20px;
     padding: 1em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .tech-stack-text {
-    color: white;
+    color: white !important;
     font-size: clamp(14px, 4vw, 20px);
     padding: clamp(10px, 3vw, 20px);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
@@ -412,7 +412,7 @@
 }
 
 .linkedin-icon, .github-icon {
-    color: white;
+    color: white !important;
     font-size: 3em;
 }
 
@@ -430,7 +430,7 @@
 
 .footer {
     background-color: teal;
-    color: white;
+    color: white !important;
     padding: 10px;
     text-align: center;
 }
@@ -464,7 +464,7 @@
 }
 
 .resume-grid h3 {
-    color: white;
+    color: white !important;
     font-size: 1.5em;
     margin-bottom: 20px;
 }
@@ -475,7 +475,7 @@
 
 .resume-button {
     background-color:magenta;
-    color: white;
+    color: white !important;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -531,20 +531,20 @@
 .resume-content h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    color: white;
+    color: white !important;
 }
 
 .resume-content h2 {
     font-size: 1.8em;
     margin-bottom: 15px;
-    color: white;
+    color: white !important;
 }
 
 .resume-content h4 {
     font-size: 1.2em;
     max-width: 600px;
     margin: 0 auto;
-    color: white;
+    color: white !important;
 }
 
 @media (max-width: 768px) {
@@ -644,7 +644,7 @@
     gap: 15px;
     font-family: 'Anton', sans-serif;
     font-weight: bold;
-    color: white;
+    color: white !important;
     font-size: clamp(1.5em, 5vw, 2.5em);
     margin-bottom: 0.5em;
 }
@@ -749,7 +749,7 @@
 }
 
 .resume-generator-body h1 {
-    color: white;
+    color: white !important;
     text-align: center;
     font-family: 'Anton', sans-serif;
     font-size: clamp(1.5em, 5vw, 2.5em);
@@ -758,7 +758,7 @@
 
 .free-banner {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    color: white !important;
     padding: 20px 25px;
     border-radius: 10px;
     text-align: center;
@@ -934,7 +934,7 @@
 
 .upload-btn {
     background: #0052D4;
-    color: white;
+    color: white !important;
     border: none;
     padding: 12px 25px;
     border-radius: 6px;
@@ -1020,7 +1020,7 @@
 
 .add-btn {
     background: #0052D4;
-    color: white;
+    color: white !important;
     border: none;
     padding: 12px 20px;
     border-radius: 6px;
@@ -1054,7 +1054,7 @@
 
 .remove-btn {
     background: #d32f2f;
-    color: white;
+    color: white !important;
     border: none;
     width: 24px;
     height: 24px;
@@ -1111,7 +1111,7 @@
 
 .preview-main-btn {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    color: white !important;
     border: none;
     padding: 15px 40px;
     border-radius: 8px;
@@ -1174,7 +1174,7 @@
 
 .close-preview-btn {
     background: #666;
-    color: white;
+    color: white !important;
 }
 
 .close-preview-btn:hover {
@@ -1183,7 +1183,7 @@
 
 .generate-pdf-btn {
     background: #2E7D32;
-    color: white;
+    color: white !important;
 }
 
 .generate-pdf-btn:hover {
@@ -1215,9 +1215,16 @@
 
 .cv-sidebar {
     padding: 40px 20px;
-    color: white;
+    color: white !important;
     min-height: 1188px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-sidebar,
+.cv-sidebar * {
+    color: white !important;
 }
 
 .cv-photo-container {
@@ -1239,7 +1246,7 @@
     text-align: center;
     margin: 10px 0;
     word-wrap: break-word;
-    color: white;
+    color: white !important;
 }
 
 .cv-job-title {
@@ -1247,25 +1254,25 @@
     font-family: 'Oxygen', sans-serif;
     font-size: 1.1em;
     margin-bottom: 30px;
-    color: white;
+    color: white !important;
 }
 
 .cv-contact {
     font-family: 'Oxygen', sans-serif;
     font-size: 0.9em;
     margin-bottom: 30px;
-    color: white;
+    color: white !important;
 }
 
 .cv-contact p {
     margin: 8px 0;
     word-wrap: break-word;
-    color: white;
+    color: white !important;
 }
 
 .cv-section {
     margin-bottom: 30px;
-    color: white;
+    color: white !important;
 }
 
 .cv-section h3 {
@@ -1274,37 +1281,37 @@
     margin-bottom: 15px;
     border-bottom: 2px solid white;
     padding-bottom: 5px;
-    color: white;
+    color: white !important;
 }
 
 .cv-section ul {
     list-style: none;
     padding: 0;
     font-family: 'Oxygen', sans-serif;
-    color: white;
+    color: white !important;
 }
 
 .cv-section li {
     margin: 8px 0;
-    color: white;
+    color: white !important;
 }
 
 .cv-language {
     margin-bottom: 15px;
-    color: white;
+    color: white !important;
 }
 
 .cv-language p {
     margin: 5px 0;
     font-family: 'Oxygen', sans-serif;
-    color: white;
+    color: white !important;
 }
 
 .language-level-display {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: white;
+    color: white !important;
 }
 
 .language-bar-container {
@@ -1324,7 +1331,7 @@
 .language-level-text {
     font-size: 0.9em;
     white-space: nowrap;
-    color: white;
+    color: white !important;
 }
 
 .cv-main {
@@ -1367,6 +1374,11 @@
 
     .cv-main * {
         color: #333333 !important;
+    }
+
+    .cv-sidebar,
+    .cv-sidebar * {
+        color: white !important;
     }
 }
 
