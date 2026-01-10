@@ -1214,9 +1214,10 @@
 }
 
 .cv-sidebar {
-    padding: 40px 20px;
+    padding: 40px 20px 0;
     color: white;
-    min-height: 1188px;
+    min-height: 100%;
+    box-sizing: border-box;
 }
 
 .cv-photo-container {
