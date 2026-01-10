@@ -121,6 +121,12 @@ const ResumeGenerator = () => {
 
                     if (sidebar) {
                         sidebar.style.setProperty('filter', 'none', 'important');
+
+                        // Force white text for all sidebar elements in PDF
+                        const sidebarElements = sidebar.querySelectorAll('*');
+                        sidebarElements.forEach(el => {
+                            el.style.setProperty('color', 'white', 'important');
+                        });
                     }
                 }
             });
