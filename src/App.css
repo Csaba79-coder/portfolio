@@ -1216,7 +1216,8 @@
 .cv-sidebar {
     padding: 40px 20px;
     color: white;
-    min-height: 1188px; /* A4 aljáig */
+    min-height: 1188px;
+    height: 100%;
 }
 
 .cv-photo-container {
