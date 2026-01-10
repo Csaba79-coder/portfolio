@@ -167,7 +167,7 @@ const ResumeGenerator = () => {
                             {t.privacy}
                         </div>
 
-                        {/* Színválasztó */}
+                        {/* Color selector */}
                         <div className="config-section">
                             <h3>{t.colorTitle}</h3>
                             <div className="color-selector">
@@ -190,7 +190,7 @@ const ResumeGenerator = () => {
                             </div>
                         </div>
 
-                        {/* Fotó opció */}
+                        {/* Photo option */}
                         <div className="config-section">
                             <label className="photo-checkbox">
                                 <input
@@ -387,7 +387,7 @@ const ResumeGenerator = () => {
                             </button>
                         </div>
 
-                        {/* Itt kezdődik a lényeg: explicit fehér háttér a teljes konténerre */}
+                        {/* CV Preview */}
                         <div className="cv-preview" style={{ backgroundColor: '#ffffff', colorScheme: 'light', filter: 'none' }}>
                             <div className="cv-sidebar" style={{ backgroundColor: selectedColor }}>
                                 {hasPhoto && photoPreview && (
