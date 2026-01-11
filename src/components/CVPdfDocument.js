@@ -1,5 +1,5 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 
 // Register fonts (optional - you can use default fonts or custom ones)
 // Font.register({ family: 'Anton', src: '...' });
@@ -65,6 +65,12 @@ const styles = StyleSheet.create({
         fontSize: 12,
         lineHeight: 1.6,
     },
+    photo: {
+        width: 120,
+        height: 120,
+        borderRadius: 60,
+        objectFit: 'cover',
+    },
 });
 
 const CVPdfDocument = ({
@@ -92,8 +98,7 @@ const CVPdfDocument = ({
                 <View style={[styles.sidebar, { backgroundColor: selectedColor }]}>
                     {hasPhoto && photoPreview && (
                         <View style={{ alignItems: 'center', marginBottom: 20 }}>
-                            {/* Note: Image component would go here if we want to support photos */}
-                            {/* For now skipping photo in PDF */}
+                            <Image src={photoPreview} style={styles.photo} />
                         </View>
                     )}
 
