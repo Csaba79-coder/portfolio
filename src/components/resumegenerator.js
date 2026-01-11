@@ -477,7 +477,7 @@ const ResumeGenerator = () => {
                                         <h3>{t.cvSections.languages}</h3>
                                         {languages.map((l, idx) => (
                                             <div key={idx} className="cv-language">
-                                                <p>{l.language}</p>
+                                                <p>{l.language} {showLanguageLevels && `(${l.level})`}</p>
                                                 {showLanguageLevels && (
                                                     <div className="language-level-display">
                                                         <div className="language-bar-container">
@@ -495,7 +495,6 @@ const ResumeGenerator = () => {
                                                                 }}
                                                             ></div>
                                                         </div>
-                                                        <span className="language-level-text">({l.level})</span>
                                                     </div>
                                                 )}
                                             </div>

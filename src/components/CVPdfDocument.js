@@ -154,13 +154,10 @@ const CVPdfDocument = ({
 
                                 return (
                                     <View key={idx} style={styles.languageItem}>
-                                        <Text>{l.language}</Text>
+                                        <Text>{l.language} {showLanguageLevels && `(${l.level})`}</Text>
                                         {showLanguageLevels && (
-                                            <View>
-                                                <View style={styles.languageBarContainer}>
-                                                    <View style={[styles.languageBar, { width: `${levelWidth}%` }]} />
-                                                </View>
-                                                <Text style={{ fontSize: 9 }}>({l.level})</Text>
+                                            <View style={styles.languageBarContainer}>
+                                                <View style={[styles.languageBar, { width: `${levelWidth}%` }]} />
                                             </View>
                                         )}
                                     </View>
