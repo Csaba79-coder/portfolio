@@ -134,7 +134,7 @@ const CVPdfDocument = ({
                         <View>
                             <Text style={styles.sectionTitle}>{t.cvSections.skills}</Text>
                             {skills.map((skill, idx) => (
-                                <Text key={idx} style={styles.skillsList}>• {skill}</Text>
+                                <Text key={idx} style={styles.skillsList}>{skill}</Text>
                             ))}
                         </View>
                     )}
