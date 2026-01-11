@@ -86,6 +86,15 @@ const ResumeGenerator = () => {
         }
         ogType.setAttribute('content', 'website');
 
+        // OG Image
+        let ogImage = document.querySelector('meta[property="og:image"]');
+        if (!ogImage) {
+            ogImage = document.createElement('meta');
+            ogImage.setAttribute('property', 'og:image');
+            document.head.appendChild(ogImage);
+        }
+        ogImage.setAttribute('content', 'https://csaba79coder.com/open-graph-fan.png');
+
     }, [t.title, t.metaDescription, lang]);
 
     const [selectedColor, setSelectedColor] = useState("#0052D4");
