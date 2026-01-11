@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from "@mui/material";
+import { Link } from 'react-router-dom';
 import claudeLogo from '../assets/claude-ai-icon.png';
 import Footer from "./footer";
 
@@ -46,6 +47,11 @@ class About extends Component {
                             <a href="https://dev.to/csaba79coder" target="_blank" rel="noopener noreferrer">
                                 My Dev Community Profile <span className="arrow">→</span>
                             </a>
+                            <br/>
+                            <br/>
+                            <Link to="/resume-generator/en" className="profile-link">
+                                Generate Your Resume/CV <span className="arrow">→</span>
+                            </Link>
                             <br/>
                             <br/>
                             <br/>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from "@mui/material";
+import { Link } from 'react-router-dom';
 import avatarImg from "../assets/CsabaVadasz2022.png";
 import Footer from "./footer";
 
@@ -36,6 +37,24 @@ class Resume extends Component {
                             <a href="/assets/csaba_vadasz_resume_ita.pdf" download>
                                 <button className="resume-button">Curriculum Vitae (Italiano)</button>
                             </a>
+                        </div>
+
+                        {/* Resume Generator CTA */}
+                        <div className="cv-generator-cta-resume">
+                            <hr className="resume-separator" />
+                            <h3>Want to create your own?</h3>
+                            <div className="cv-generator-content">
+                                <div className="cv-generator-image">
+                                    <img src="/open-graph-fan.png" alt="Resume Templates" />
+                                </div>
+                                <div className="cv-generator-text">
+                                    <h2>Create Your Professional Resume</h2>
+                                    <p>Build your personalized CV in 4 languages</p>
+                                    <Link to="/resume-generator/en">
+                                        <button className="cv-generator-btn">Get Started</button>
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </Grid>
                 </Grid>

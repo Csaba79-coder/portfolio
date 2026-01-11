@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from "@mui/material";
+import { Link } from 'react-router-dom';
 import santoriniImage from '../assets/santorini.png';
 import avatarImg from '../assets/CsabaVadasz2022.png';
 import { FaLinkedin, FaGithub, FaFacebook, FaTwitter, FaInstagram  } from 'react-icons/fa';
@@ -39,6 +40,22 @@ class Landing extends Component {
                             <a href="https://twitter.com/csaba_vadasz" rel="noopener noreferrer" target="_blank">
                                 <FaTwitter className="social-icon"/>
                             </a>
+                        </div>
+
+                        {/* Resume Generator CTA */}
+                        <div className="cv-generator-cta">
+                            <div className="cv-generator-content">
+                                <div className="cv-generator-image">
+                                    <img src="/open-graph-fan.png" alt="Resume Templates" />
+                                </div>
+                                <div className="cv-generator-text">
+                                    <h2>Create Your Professional Resume</h2>
+                                    <p>Build your personalized CV in 4 languages</p>
+                                    <Link to="/resume-generator/en">
+                                        <button className="cv-generator-btn">Get Started</button>
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </Grid>
                 </Grid>
