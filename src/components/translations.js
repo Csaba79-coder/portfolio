@@ -1,7 +1,8 @@
 export const translations = {
     en: {
         title: "Resume & CV Generator",
-        freeBanner: "💰 100% Free - No registration required! Generate and download your PDF resume. Good luck with your job search!",
+        metaDescription: "Free Resume & CV Generator - Create professional resumes and CVs in minutes. No registration required. Download PDF instantly.",
+        freeBanner: "💰 100% Free - No registration required! Generate and download your PDF resume or CV. Good luck with your job search!",
         privacy: "ℹ️ Your data stays in your browser. Nothing is stored on our servers.",
         colorTitle: "How to Choose a Color (Color Psychology)",
         colors: [
@@ -54,7 +55,8 @@ export const translations = {
     },
     de: {
         title: "Lebenslauf & CV Generator",
-        freeBanner: "💰 100% Kostenlos - Keine Registrierung erforderlich! Erstellen und laden Sie Ihren PDF-Lebenslauf herunter. Viel Erfolg bei Ihrer Jobsuche!",
+        metaDescription: "Kostenloser Lebenslauf & CV Generator - Professionelle Lebensläufe in Minuten erstellen. Keine Registrierung. PDF sofort herunterladen.",
+        freeBanner: "💰 100% Kostenlos - Keine Registrierung erforderlich! Erstellen und laden Sie Ihren PDF-Lebenslauf oder CV herunter. Viel Erfolg bei Ihrer Jobsuche!",
         privacy: "ℹ️ Ihre Daten bleiben in Ihrem Browser. Nichts wird auf unseren Servern gespeichert.",
         colorTitle: "Wie wähle ich eine Farbe (Farbpsychologie)",
         colors: [
@@ -107,7 +109,8 @@ export const translations = {
     },
     it: {
         title: "Generatore di CV e Curriculum",
-        freeBanner: "💰 100% Gratuito - Nessuna registrazione richiesta! Genera e scarica il tuo CV in PDF. In bocca al lupo per la tua ricerca di lavoro!",
+        metaDescription: "Generatore gratuito di CV e Curriculum - Crea CV professionali in pochi minuti. Nessuna registrazione. Scarica PDF istantaneamente.",
+        freeBanner: "💰 100% Gratuito - Nessuna registrazione richiesta! Genera e scarica il tuo CV o Curriculum in PDF. In bocca al lupo per la tua ricerca di lavoro!",
         privacy: "ℹ️ I tuoi dati rimangono nel tuo browser. Nulla viene memorizzato sui nostri server.",
         colorTitle: "Come scegliere un colore (Psicologia del colore)",
         colors: [
@@ -160,7 +163,8 @@ export const translations = {
     },
     hu: {
         title: "Önéletrajz és CV Generátor",
-        freeBanner: "💰 100% Ingyenes - Regisztráció nem szükséges! Generáld és töltsd le PDF önéletrajzodat. Sok sikert az álláskereséshez!",
+        metaDescription: "Ingyenes Önéletrajz és CV Generátor - Professzionális önéletrajzok percek alatt. Regisztráció nélkül. PDF azonnali letöltés.",
+        freeBanner: "💰 100% Ingyenes - Regisztráció nem szükséges! Generáld és töltsd le PDF önéletrajzodat vagy CV-det. Sok sikert az álláskereséshez!",
         privacy: "ℹ️ Az adataid a böngésződben maradnak. Semmit nem tárolunk a szervereinken.",
         colorTitle: "Hogyan válassz színt (Szín pszichológia)",
         colors: [

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Grid } from '@mui/material';
 import WorldFlag from 'react-world-flags';
@@ -10,6 +10,17 @@ import CVPdfDocument from './CVPdfDocument';
 const ResumeGenerator = () => {
     const { lang } = useParams();
     const t = translations[lang] || translations.en;
+
+    useEffect(() => {
+        document.title = t.title;
+        let metaDescription = document.querySelector('meta[name="description"]');
+        if (!metaDescription) {
+            metaDescription = document.createElement('meta');
+            metaDescription.setAttribute('name', 'description');
+            document.head.appendChild(metaDescription);
+        }
+        metaDescription.setAttribute('content', t.metaDescription);
+    }, [t.title, t.metaDescription]);
 
     const [selectedColor, setSelectedColor] = useState("#0052D4");
     const [hasPhoto, setHasPhoto] = useState(false);
