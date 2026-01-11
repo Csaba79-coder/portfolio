@@ -49,29 +49,12 @@ class About extends Component {
                             </a>
                             <br/>
                             <br/>
-                            <a href="https://csaba79coder.com/resume-generator/en" target="_blank" rel="noopener noreferrer">
+                            <Link to="/resume-generator/en" className="profile-link">
                                 Generate Your Resume/CV <span className="arrow">→</span>
-                            </a>
+                            </Link>
                             <br/>
                             <br/>
                             <br/>
-
-                            {/* Resume Generator CTA */}
-                            <div className="cv-generator-cta-about">
-                                <h3>Want to create your own?</h3>
-                                <div className="cv-generator-content">
-                                    <div className="cv-generator-image">
-                                        <img src="/open-graph-fan.png" alt="Resume Templates" />
-                                    </div>
-                                    <div className="cv-generator-text">
-                                        <h2>Create Your Professional Resume</h2>
-                                        <p>Build your personalized CV in 4 languages</p>
-                                        <Link to="/resume-generator/en">
-                                            <button className="cv-generator-btn">Get Started</button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
 
                             <hr className="about-separator" />
 
