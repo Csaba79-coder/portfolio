@@ -13,6 +13,7 @@ const ResumeGenerator = () => {
 
     useEffect(() => {
         document.title = t.title;
+        document.documentElement.lang = lang;
         let metaDescription = document.querySelector('meta[name="description"]');
         if (!metaDescription) {
             metaDescription = document.createElement('meta');

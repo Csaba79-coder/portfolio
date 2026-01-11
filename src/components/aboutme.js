@@ -48,6 +48,11 @@ class About extends Component {
                             </a>
                             <br/>
                             <br/>
+                            <a href="https://csaba79coder.com/resume-generator/en" target="_blank" rel="noopener noreferrer">
+                                Generate Your Resume/CV <span className="arrow">→</span>
+                            </a>
+                            <br/>
+                            <br/>
                             <br/>
 
                             <hr className="about-separator" />
