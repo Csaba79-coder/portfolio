@@ -61,6 +61,19 @@ const styles = StyleSheet.create({
         fontSize: 10,
         marginBottom: 10,
     },
+    languageBarContainer: {
+        width: '100%',
+        height: 8,
+        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+        marginTop: 5,
+        marginBottom: 3,
+        borderRadius: 4,
+    },
+    languageBar: {
+        height: 8,
+        backgroundColor: '#ffffff',
+        borderRadius: 4,
+    },
     mainText: {
         fontSize: 12,
         lineHeight: 1.6,
@@ -107,13 +120,13 @@ const CVPdfDocument = ({
 
                     {/* Contact Info */}
                     <View style={styles.contactSection}>
-                        {email && <Text style={styles.contactItem}>✉️ {email}</Text>}
-                        {phone && <Text style={styles.contactItem}>📞 {phone}</Text>}
-                        {website && <Text style={styles.contactItem}>🌐 {website}</Text>}
-                        {linkedin && <Text style={styles.contactItem}>💼 LinkedIn</Text>}
-                        {location && <Text style={styles.contactItem}>📍 {location}</Text>}
-                        {nationality && <Text style={styles.contactItem}>🏳️ {nationality}</Text>}
-                        {drivingLicense && <Text style={styles.contactItem}>🚗 {drivingLicense}</Text>}
+                        {email && <Text style={styles.contactItem}>✉ {email}</Text>}
+                        {phone && <Text style={styles.contactItem}>☎ {phone}</Text>}
+                        {website && <Text style={styles.contactItem}>⌘ {website}</Text>}
+                        {linkedin && <Text style={styles.contactItem}>⚲ LinkedIn</Text>}
+                        {location && <Text style={styles.contactItem}>⌖ {location}</Text>}
+                        {nationality && <Text style={styles.contactItem}>⚑ {nationality}</Text>}
+                        {drivingLicense && <Text style={styles.contactItem}>⚐ {drivingLicense}</Text>}
                     </View>
 
                     {/* Skills */}
@@ -130,14 +143,29 @@ const CVPdfDocument = ({
                     {languages.length > 0 && (
                         <View style={{ marginTop: 20 }}>
                             <Text style={styles.sectionTitle}>{t.cvSections.languages}</Text>
-                            {languages.map((l, idx) => (
-                                <View key={idx} style={styles.languageItem}>
-                                    <Text>{l.language}</Text>
-                                    {showLanguageLevels && (
-                                        <Text style={{ fontSize: 9 }}>({l.level})</Text>
-                                    )}
-                                </View>
-                            ))}
+                            {languages.map((l, idx) => {
+                                const levelWidth =
+                                    l.level === 'Native' ? 100 :
+                                    l.level === 'C2' ? 95 :
+                                    l.level === 'C1' ? 85 :
+                                    l.level === 'B2' ? 75 :
+                                    l.level === 'B1' ? 60 :
+                                    l.level === 'A2' ? 40 : 20;
+
+                                return (
+                                    <View key={idx} style={styles.languageItem}>
+                                        <Text>{l.language}</Text>
+                                        {showLanguageLevels && (
+                                            <View>
+                                                <View style={styles.languageBarContainer}>
+                                                    <View style={[styles.languageBar, { width: `${levelWidth}%` }]} />
+                                                </View>
+                                                <Text style={{ fontSize: 9 }}>({l.level})</Text>
+                                            </View>
+                                        )}
+                                    </View>
+                                );
+                            })}
                         </View>
                     )}
                 </View>
