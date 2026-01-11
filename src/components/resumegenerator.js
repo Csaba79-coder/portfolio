@@ -4,8 +4,8 @@ import { Grid } from '@mui/material';
 import WorldFlag from 'react-world-flags';
 import Footer from "./footer";
 import { translations, allLanguages } from './translations';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import { pdf } from '@react-pdf/renderer';
+import CVPdfDocument from './CVPdfDocument';
 
 const ResumeGenerator = () => {
     const { lang } = useParams();
@@ -82,66 +82,36 @@ const ResumeGenerator = () => {
 
     const handleGeneratePDF = async () => {
         try {
-            const cvElement = document.querySelector('.cv-preview');
-
-            const canvas = await html2canvas(cvElement, {
-                scale: 2, // A 3-as scale néha memóriahibát dob gyengébb gépeken, a 2-es is tökéletes
-                useCORS: true,
-                logging: false,
-                backgroundColor: '#ffffff',
-                onclone: (clonedDoc) => {
-                    const preview = clonedDoc.querySelector('.cv-preview');
-                    const main = clonedDoc.querySelector('.cv-main');
-                    const sidebar = clonedDoc.querySelector('.cv-sidebar');
-
-                    // 1. A teljes dokumentum kényszerítése világos módra
-                    clonedDoc.documentElement.style.setProperty('color-scheme', 'light', 'important');
-                    clonedDoc.body.style.setProperty('background-color', '#ffffff', 'important');
-
-                    if (preview) {
-                        // Itt is setProperty kell, hogy ne vigye át a sötét szűrőt
-                        preview.style.setProperty('background-color', '#ffffff', 'important');
-                        preview.style.setProperty('filter', 'none', 'important');
-                        preview.style.setProperty('-webkit-filter', 'none', 'important');
-                    }
-
-                    if (main) {
-                        main.style.setProperty('background-color', '#ffffff', 'important');
-                        main.style.setProperty('color', '#000000', 'important');
-                        main.style.setProperty('filter', 'none', 'important');
-
-                        const all = main.querySelectorAll('*');
-                        all.forEach(el => {
-                            el.style.setProperty('color', '#000000', 'important');
-                            el.style.setProperty('background-color', 'transparent', 'important');
-                            el.style.setProperty('filter', 'none', 'important');
-                            el.style.setProperty('border-color', '#000000', 'important');
-                        });
-                    }
-
-                    if (sidebar) {
-                        sidebar.style.setProperty('filter', 'none', 'important');
-
-                        // Force white text for all sidebar elements in PDF
-                        const sidebarElements = sidebar.querySelectorAll('*');
-                        sidebarElements.forEach(el => {
-                            el.style.setProperty('color', 'white', 'important');
-                        });
-                    }
-                }
-            });
-
-            const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF('p', 'mm', 'a4');
-            const imgWidth = 210;
-            const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-            pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+            const blob = await pdf(
+                <CVPdfDocument
+                    name={name}
+                    jobTitle={jobTitle}
+                    email={email}
+                    phone={phone}
+                    website={website}
+                    linkedin={linkedin}
+                    location={location}
+                    nationality={nationality}
+                    drivingLicense={drivingLicense}
+                    skills={skills}
+                    languages={languages}
+                    showLanguageLevels={showLanguageLevels}
+                    selectedColor={selectedColor}
+                    hasPhoto={hasPhoto}
+                    photoPreview={photoPreview}
+                    t={t}
+                />
+            ).toBlob();
 
             const cleanName = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '_');
-            pdf.save(`${cleanName}_${lang}.pdf`);
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `${cleanName}_${lang}.pdf`;
+            link.click();
+            URL.revokeObjectURL(url);
         } catch (error) {
-            console.error('PDF error:', error);
+            console.error('PDF generation error:', error);
         }
     };
 
