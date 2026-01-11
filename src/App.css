@@ -1478,6 +1478,10 @@ body.dark-mode .cv-main * {
     margin-bottom: 25px;
 }
 
+.cv-generator-cta .cv-generator-text p {
+    color: rgba(0, 0, 0, 0.9);
+}
+
 .cv-generator-btn {
     background: linear-gradient(135deg, #FFD700, #FFA500);
     color: #000;
