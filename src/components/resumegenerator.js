@@ -21,7 +21,7 @@ const ResumeGenerator = () => {
             document.head.appendChild(metaDescription);
         }
         metaDescription.setAttribute('content', t.metaDescription);
-    }, [t.title, t.metaDescription]);
+    }, [t.title, t.metaDescription, lang]); 
 
     const [selectedColor, setSelectedColor] = useState("#0052D4");
     const [hasPhoto, setHasPhoto] = useState(false);
