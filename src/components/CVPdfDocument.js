@@ -1,5 +1,5 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet, Font } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 
 // Register fonts (optional - you can use default fonts or custom ones)
 // Font.register({ family: 'Anton', src: '...' });
