@@ -1417,3 +1417,176 @@ body.dark-mode .cv-main * {
     color: #999999 !important;
     opacity: 1 !important;
 }
+
+/* CV Generator CTA - Landing Page */
+.cv-generator-cta {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cv-generator-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+    border: 3px solid #FFD700;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv-generator-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 48px rgba(255, 215, 0, 0.5);
+}
+
+.cv-generator-image {
+    flex: 0 0 250px;
+}
+
+.cv-generator-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cv-generator-text {
+    flex: 1;
+    text-align: left;
+}
+
+.cv-generator-text h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 2em;
+    color: #FFD700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cv-generator-text p {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+
+.cv-generator-btn {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cv-generator-btn:hover {
+    background: linear-gradient(135deg, #FFA500, #FFD700);
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6);
+}
+
+/* CV Generator CTA - Resume Page */
+.cv-generator-cta-resume {
+    margin-top: 60px;
+    padding-top: 40px;
+}
+
+.cv-generator-cta-resume h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 2em;
+    color: white;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.cv-generator-cta-resume .cv-generator-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 3px solid #FFD700;
+}
+
+.cv-generator-cta-resume .cv-generator-text {
+    text-align: left;
+}
+
+.cv-generator-cta-resume .cv-generator-text h2 {
+    color: #FFD700;
+}
+
+.cv-generator-cta-resume .cv-generator-text p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.resume-separator {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #FFD700, transparent);
+    margin: 40px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cv-generator-content {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 25px;
+    }
+    
+    .cv-generator-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .cv-generator-text {
+        text-align: center;
+    }
+    
+    .cv-generator-text h2 {
+        font-size: 1.5em;
+    }
+    
+    .cv-generator-text p {
+        font-size: 1em;
+    }
+    
+    .cv-generator-btn {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .cv-generator-cta {
+        margin-top: 40px;
+        padding: 0 10px;
+    }
+    
+    .cv-generator-content {
+        padding: 20px 15px;
+        border-width: 2px;
+    }
+    
+    .cv-generator-text h2 {
+        font-size: 1.3em;
+    }
+    
+    .cv-generator-btn {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
+}
