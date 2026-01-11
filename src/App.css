@@ -1105,7 +1105,9 @@
 
 /* Preview Button */
 .preview-btn-container {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     margin: 40px 0;
 }
 
@@ -1124,6 +1126,25 @@
 }
 
 .preview-main-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.clear-form-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.clear-form-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }

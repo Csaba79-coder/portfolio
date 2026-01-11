@@ -116,6 +116,55 @@ const ResumeGenerator = () => {
     // Preview
     const [showPreview, setShowPreview] = useState(false);
 
+    // Load from localStorage on mount or language change
+    useEffect(() => {
+        const savedData = localStorage.getItem(`cv_data_${lang}`);
+        if (savedData) {
+            try {
+                const data = JSON.parse(savedData);
+                setSelectedColor(data.selectedColor || "#0052D4");
+                setHasPhoto(data.hasPhoto || false);
+                setPhotoPreview(data.photoPreview || null);
+                setName(data.name || "");
+                setJobTitle(data.jobTitle || "");
+                setEmail(data.email || "");
+                setPhone(data.phone || "");
+                setWebsite(data.website || "");
+                setLinkedin(data.linkedin || "");
+                setLocation(data.location || "");
+                setNationality(data.nationality || "");
+                setDrivingLicense(data.drivingLicense || "");
+                setSkills(data.skills || []);
+                setLanguages(data.languages || []);
+                setShowLanguageLevels(data.showLanguageLevels !== undefined ? data.showLanguageLevels : true);
+            } catch (error) {
+                console.error('Error loading from localStorage:', error);
+            }
+        }
+    }, [lang]);
+
+    // Save to localStorage whenever any state changes
+    useEffect(() => {
+        const dataToSave = {
+            selectedColor,
+            hasPhoto,
+            photoPreview,
+            name,
+            jobTitle,
+            email,
+            phone,
+            website,
+            linkedin,
+            location,
+            nationality,
+            drivingLicense,
+            skills,
+            languages,
+            showLanguageLevels
+        };
+        localStorage.setItem(`cv_data_${lang}`, JSON.stringify(dataToSave));
+    }, [lang, selectedColor, hasPhoto, photoPreview, name, jobTitle, email, phone, website, linkedin, location, nationality, drivingLicense, skills, languages, showLanguageLevels]);
+
     const flags = [
         { code: 'en', flag: 'GB', name: 'English' },
         { code: 'de', flag: 'DE', name: 'Deutsch' },
@@ -190,6 +239,28 @@ const ResumeGenerator = () => {
         } catch (error) {
             console.error('PDF generation error:', error);
         }
+    };
+
+    const handleClearForm = () => {
+        // Clear localStorage for current language
+        localStorage.removeItem(`cv_data_${lang}`);
+
+        // Reset all states to default values
+        setSelectedColor("#0052D4");
+        setHasPhoto(false);
+        setPhotoPreview(null);
+        setName("");
+        setJobTitle("");
+        setEmail("");
+        setPhone("");
+        setWebsite("");
+        setLinkedin("");
+        setLocation("");
+        setNationality("");
+        setDrivingLicense("");
+        setSkills([]);
+        setLanguages([]);
+        setShowLanguageLevels(true);
     };
 
     return (
@@ -417,10 +488,13 @@ const ResumeGenerator = () => {
                             </div>
                         </div>
 
-                        {/* Preview Button */}
+                        {/* Preview and Clear Buttons */}
                         <div className="preview-btn-container">
                             <button onClick={() => setShowPreview(true)} className="preview-main-btn">
                                 {t.previewBtn}
+                            </button>
+                            <button onClick={handleClearForm} className="clear-form-btn">
+                                {t.clearForm}
                             </button>
                         </div>
 
