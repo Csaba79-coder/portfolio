@@ -1,6 +1,6 @@
 export const translations = {
     en: {
-        title: "Resume Generator",
+        title: "Resume & CV Generator",
         freeBanner: "💰 100% Free - No registration required! Generate and download your PDF resume. Good luck with your job search!",
         privacy: "ℹ️ Your data stays in your browser. Nothing is stored on our servers.",
         colorTitle: "How to Choose a Color (Color Psychology)",
@@ -32,7 +32,7 @@ export const translations = {
         selectLevel: "Select level",
         addLanguage: "Add Language",
         showLevels: "Show language levels on resume",
-        previewBtn: "Preview Resume",
+        previewBtn: "Preview Resume/CV",
         closePreview: "Back to Edit",
         generatePDF: "Generate PDF",
         levels: {
@@ -53,7 +53,7 @@ export const translations = {
         }
     },
     de: {
-        title: "Lebenslauf Generator",
+        title: "Lebenslauf & CV Generator",
         freeBanner: "💰 100% Kostenlos - Keine Registrierung erforderlich! Erstellen und laden Sie Ihren PDF-Lebenslauf herunter. Viel Erfolg bei Ihrer Jobsuche!",
         privacy: "ℹ️ Ihre Daten bleiben in Ihrem Browser. Nichts wird auf unseren Servern gespeichert.",
         colorTitle: "Wie wähle ich eine Farbe (Farbpsychologie)",
@@ -106,7 +106,7 @@ export const translations = {
         }
     },
     it: {
-        title: "Generatore di CV",
+        title: "Generatore di CV e Curriculum",
         freeBanner: "💰 100% Gratuito - Nessuna registrazione richiesta! Genera e scarica il tuo CV in PDF. In bocca al lupo per la tua ricerca di lavoro!",
         privacy: "ℹ️ I tuoi dati rimangono nel tuo browser. Nulla viene memorizzato sui nostri server.",
         colorTitle: "Come scegliere un colore (Psicologia del colore)",
@@ -159,7 +159,7 @@ export const translations = {
         }
     },
     hu: {
-        title: "Önéletrajz Generátor",
+        title: "Önéletrajz és CV Generátor",
         freeBanner: "💰 100% Ingyenes - Regisztráció nem szükséges! Generáld és töltsd le PDF önéletrajzodat. Sok sikert az álláskereséshez!",
         privacy: "ℹ️ Az adataid a böngésződben maradnak. Semmit nem tárolunk a szervereinken.",
         colorTitle: "Hogyan válassz színt (Szín pszichológia)",
