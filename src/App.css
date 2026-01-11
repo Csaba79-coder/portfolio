@@ -1504,6 +1504,10 @@ body.dark-mode .cv-main * {
 .cv-generator-cta-resume {
     margin-top: 60px;
     padding-top: 40px;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cv-generator-cta-resume h3 {
@@ -1536,6 +1540,42 @@ body.dark-mode .cv-main * {
     height: 2px;
     background: linear-gradient(to right, transparent, #FFD700, transparent);
     margin: 40px 0;
+}
+
+/* CV Generator CTA - About Me Page */
+.cv-generator-cta-about {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding-top: 40px;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cv-generator-cta-about h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 2em;
+    color: white;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.cv-generator-cta-about .cv-generator-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 3px solid #FFD700;
+}
+
+.cv-generator-cta-about .cv-generator-text {
+    text-align: left;
+}
+
+.cv-generator-cta-about .cv-generator-text h2 {
+    color: #FFD700;
+}
+
+.cv-generator-cta-about .cv-generator-text p {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Responsive Design */

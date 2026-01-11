@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from "@mui/material";
+import { Link } from 'react-router-dom';
 import claudeLogo from '../assets/claude-ai-icon.png';
 import Footer from "./footer";
 
@@ -54,6 +55,23 @@ class About extends Component {
                             <br/>
                             <br/>
                             <br/>
+
+                            {/* Resume Generator CTA */}
+                            <div className="cv-generator-cta-about">
+                                <h3>Want to create your own?</h3>
+                                <div className="cv-generator-content">
+                                    <div className="cv-generator-image">
+                                        <img src="/open-graph-fan.png" alt="Resume Templates" />
+                                    </div>
+                                    <div className="cv-generator-text">
+                                        <h2>Create Your Professional Resume</h2>
+                                        <p>Build your personalized CV in 4 languages</p>
+                                        <Link to="/resume-generator/en">
+                                            <button className="cv-generator-btn">Get Started</button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
 
                             <hr className="about-separator" />
 
