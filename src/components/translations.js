@@ -36,6 +36,7 @@ export const translations = {
         previewBtn: "Preview Resume/CV",
         closePreview: "Back to Edit",
         generatePDF: "Generate PDF",
+        clearForm: "Clear Form",
         levels: {
             'A1': 'A1 - Beginner',
             'A2': 'A2 - Elementary',
@@ -90,6 +91,7 @@ export const translations = {
         previewBtn: "Lebenslauf Vorschau",
         closePreview: "Zurück zur Bearbeitung",
         generatePDF: "PDF erstellen",
+        clearForm: "Formular löschen",
         levels: {
             'A1': 'A1 - Anfänger',
             'A2': 'A2 - Grundkenntnisse',
@@ -144,6 +146,7 @@ export const translations = {
         previewBtn: "Anteprima CV",
         closePreview: "Torna alla modifica",
         generatePDF: "Genera PDF",
+        clearForm: "Cancella modulo",
         levels: {
             'A1': 'A1 - Principiante',
             'A2': 'A2 - Elementare',
@@ -198,6 +201,7 @@ export const translations = {
         previewBtn: "Előnézet",
         closePreview: "Vissza a szerkesztéshez",
         generatePDF: "PDF generálása",
+        clearForm: "Űrlap törlése",
         levels: {
             'A1': 'A1 - Kezdő',
             'A2': 'A2 - Alapfok',
