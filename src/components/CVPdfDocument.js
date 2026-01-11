@@ -120,13 +120,13 @@ const CVPdfDocument = ({
 
                     {/* Contact Info */}
                     <View style={styles.contactSection}>
-                        {email && <Text style={styles.contactItem}>✉ {email}</Text>}
-                        {phone && <Text style={styles.contactItem}>☎ {phone}</Text>}
-                        {website && <Text style={styles.contactItem}>⌘ {website}</Text>}
-                        {linkedin && <Text style={styles.contactItem}>⚲ LinkedIn</Text>}
-                        {location && <Text style={styles.contactItem}>⌖ {location}</Text>}
-                        {nationality && <Text style={styles.contactItem}>⚑ {nationality}</Text>}
-                        {drivingLicense && <Text style={styles.contactItem}>⚐ {drivingLicense}</Text>}
+                        {email && <Text style={styles.contactItem}>{email}</Text>}
+                        {phone && <Text style={styles.contactItem}>{phone}</Text>}
+                        {website && <Text style={styles.contactItem}>{website}</Text>}
+                        {linkedin && <Text style={styles.contactItem}>LinkedIn</Text>}
+                        {location && <Text style={styles.contactItem}>{location}</Text>}
+                        {nationality && <Text style={styles.contactItem}>{nationality}</Text>}
+                        {drivingLicense && <Text style={styles.contactItem}>{drivingLicense}</Text>}
                     </View>
 
                     {/* Skills */}

@@ -452,13 +452,13 @@ const ResumeGenerator = () => {
                                 <p className="cv-job-title">{jobTitle || "Job Title"}</p>
 
                                 <div className="cv-contact">
-                                    {email && <p>✉️ {email}</p>}
-                                    {phone && <p>📞 {phone}</p>}
-                                    {website && <p>🌐 {website}</p>}
-                                    {linkedin && <p>💼 LinkedIn</p>}
-                                    {location && <p>📍 {location}</p>}
-                                    {nationality && <p>🏳️ {nationality}</p>}
-                                    {drivingLicense && <p>🚗 {drivingLicense}</p>}
+                                    {email && <p>{email}</p>}
+                                    {phone && <p>{phone}</p>}
+                                    {website && <p>{website}</p>}
+                                    {linkedin && <p>LinkedIn</p>}
+                                    {location && <p>{location}</p>}
+                                    {nationality && <p>{nationality}</p>}
+                                    {drivingLicense && <p>{drivingLicense}</p>}
                                 </div>
 
                                 {skills.length > 0 && (
