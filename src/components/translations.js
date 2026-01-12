@@ -55,9 +55,9 @@ export const translations = {
         },
         donation: {
             title: "❤️ Enjoyed this free tool?",
-            button1: "~3 USD / ~2.5 EUR (1,000 HUF)",
-            button2: "~8 USD / ~7 EUR (3,000 HUF)",
-            button3: "~14 USD / ~12 EUR (5,000 HUF)",
+            button1: "~2.5 EUR / ~3 USD (1,000 HUF)",
+            button2: "~7 EUR / ~8 USD (3,000 HUF)",
+            button3: "~12 EUR / ~14 USD (5,000 HUF)",
             secure: "🔒 Secure payment via Stripe",
             support: "💡 Supports domain and hosting costs",
             rates: "💱 Exact amounts depend on current HUF exchange rates"
@@ -119,9 +119,9 @@ export const translations = {
         },
         donation: {
             title: "❤️ Hat dir das Tool geholfen?",
-            button1: "~3 USD / ~2,5 EUR (1.000 HUF)",
-            button2: "~8 USD / ~7 EUR (3.000 HUF)",
-            button3: "~14 USD / ~12 EUR (5.000 HUF)",
+            button1: "~2,5 EUR / ~3 USD (1.000 HUF)",
+            button2: "~7 EUR / ~8 USD (3.000 HUF)",
+            button3: "~12 EUR / ~14 USD (5.000 HUF)",
             secure: "🔒 Sichere Zahlung über Stripe",
             support: "💡 Unterstützt Domain- und Hosting-Kosten",
             rates: "💱 Genaue Beträge hängen vom aktuellen HUF-Wechselkurs ab"
@@ -183,9 +183,9 @@ export const translations = {
         },
         donation: {
             title: "❤️ Ti è piaciuto questo strumento?",
-            button1: "~3 USD / ~2,5 EUR (1.000 HUF)",
-            button2: "~8 USD / ~7 EUR (3.000 HUF)",
-            button3: "~14 USD / ~12 EUR (5.000 HUF)",
+            button1: "~2,5 EUR / ~3 USD (1.000 HUF)",
+            button2: "~7 EUR / ~8 USD (3.000 HUF)",
+            button3: "~12 EUR / ~14 USD (5.000 HUF)",
             secure: "🔒 Pagamento sicuro tramite Stripe",
             support: "💡 Supporta i costi di dominio e hosting",
             rates: "💱 Gli importi esatti dipendono dagli attuali tassi di cambio del HUF"
@@ -194,7 +194,7 @@ export const translations = {
     hu: {
         title: "Önéletrajz és CV Generátor",
         metaDescription: "Ingyenes Önéletrajz és CV Generátor - Professzionális önéletrajzok percek alatt. Regisztráció nélkül. PDF azonnali letöltés.",
-        freeBanner: "💰 100% Ingyenes - Regisztráció nem szükséges! Generáld és töltsd le PDF önéletrajzodat vagy CV-det. Sok sikert az álláskereséshez!",
+        freeBanner: "💰 100% ingyenes - Regisztráció nem szükséges! Generáld és töltsd le PDF önéletrajzodat vagy CV-det. Sok sikert az álláskereséshez!",
         privacy: "ℹ️ Az adataid a böngésződben maradnak. Semmit nem tárolunk a szervereinken.",
         colorTitle: "Hogyan válassz színt (Szín pszichológia)",
         colors: [
@@ -247,9 +247,9 @@ export const translations = {
         },
         donation: {
             title: "❤️ Tetszett az ingyenes eszköz?",
-            button1: "~3 USD / ~2,5 EUR (1.000 HUF)",
-            button2: "~8 USD / ~7 EUR (3.000 HUF)",
-            button3: "~14 USD / ~12 EUR (5.000 HUF)",
+            button1: "~2,5 EUR / ~3 USD (1.000 HUF)",
+            button2: "~7 EUR / ~8 USD (3.000 HUF)",
+            button3: "~12 EUR / ~14 USD (5.000 HUF)",
             secure: "🔒 Biztonságos fizetés Stripe-on keresztül",
             support: "💡 Domain és hosting költségeket támogat",
             rates: "💱 A pontos összegek forintban láthatóak, nincs átváltás"
