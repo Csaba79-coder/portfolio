@@ -514,13 +514,13 @@ const ResumeGenerator = () => {
                         <div className="donation-container">
                             <h3 className="donation-title">{t.donation.title}</h3>
                             <div className="donation-buttons">
-                                <a href="#" className="donation-btn">
+                                <a href="https://buy.stripe.com/dRm5kw1pl8qz6lggoJ4gg01" target="_blank" rel="noopener noreferrer" className="donation-btn">
                                     {t.donation.button1}
                                 </a>
-                                <a href="#" className="donation-btn">
+                                <a href="https://buy.stripe.com/aFaeV6ec77mv394b4p4gg02" target="_blank" rel="noopener noreferrer" className="donation-btn">
                                     {t.donation.button2}
                                 </a>
-                                <a href="#" className="donation-btn">
+                                <a href="https://buy.stripe.com/fZu7sE6JFcGP7pk7Sd4gg03" target="_blank" rel="noopener noreferrer" className="donation-btn">
                                     {t.donation.button3}
                                 </a>
                             </div>
