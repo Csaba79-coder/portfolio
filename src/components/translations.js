@@ -52,6 +52,12 @@ export const translations = {
             profile: "PROFILE",
             experience: "EXPERIENCE",
             education: "EDUCATION"
+        },
+        donation: {
+            title: "❤️ Enjoyed this free tool?",
+            secure: "🔒 Secure payment via Stripe",
+            support: "💡 Supports domain and hosting costs",
+            rates: "💱 Exact amounts depend on current HUF exchange rates"
         }
     },
     de: {
@@ -107,6 +113,12 @@ export const translations = {
             profile: "PROFIL",
             experience: "BERUFLICHE ERFAHRUNG",
             education: "AUSBILDUNG"
+        },
+        donation: {
+            title: "❤️ Hat dir das Tool geholfen?",
+            secure: "🔒 Sichere Zahlung über Stripe",
+            support: "💡 Unterstützt Domain- und Hosting-Kosten",
+            rates: "💱 Genaue Beträge hängen vom aktuellen HUF-Wechselkurs ab"
         }
     },
     it: {
@@ -162,6 +174,12 @@ export const translations = {
             profile: "PROFILO PROFESSIONALE",
             experience: "ESPERIENZA LAVORATIVA",
             education: "ISTRUZIONE E FORMAZIONE"
+        },
+        donation: {
+            title: "❤️ Ti è piaciuto questo strumento?",
+            secure: "🔒 Pagamento sicuro tramite Stripe",
+            support: "💡 Supporta i costi di dominio e hosting",
+            rates: "💱 Gli importi esatti dipendono dagli attuali tassi di cambio del HUF"
         }
     },
     hu: {
@@ -217,6 +235,12 @@ export const translations = {
             profile: "PROFIL",
             experience: "TAPASZTALAT",
             education: "VÉGZETTSÉG"
+        },
+        donation: {
+            title: "❤️ Tetszett az ingyenes eszköz?",
+            secure: "🔒 Biztonságos fizetés Stripe-on keresztül",
+            support: "💡 Domain és hosting költségeket támogat",
+            rates: "💱 A pontos összegek forintban láthatóak, nincs átváltás"
         }
     }
 };

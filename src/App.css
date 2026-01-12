@@ -1639,3 +1639,112 @@ body.dark-mode .cv-main * {
         font-size: 0.9em;
     }
 }
+
+/* Donation Section */
+.donation-container {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #000;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.donation-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.donation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.donation-btn {
+    display: inline-block;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.donation-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.5);
+    background: linear-gradient(135deg, #45a049, #1976D2);
+}
+
+.donation-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.donation-info p {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 0.9em;
+    color: #555;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+/* Responsive - Donation */
+@media (max-width: 768px) {
+    .donation-container {
+        padding: 30px 20px;
+        margin-top: 40px;
+    }
+    
+    .donation-title {
+        font-size: 1.5em;
+    }
+    
+    .donation-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .donation-btn {
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .donation-info p {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 480px) {
+    .donation-container {
+        padding: 20px 15px;
+        border-width: 1px;
+    }
+    
+    .donation-title {
+        font-size: 1.3em;
+    }
+    
+    .donation-btn {
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+}

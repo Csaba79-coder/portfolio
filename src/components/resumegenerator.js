@@ -510,6 +510,27 @@ const ResumeGenerator = () => {
                             </button>
                         </div>
 
+                        {/* Donation Section */}
+                        <div className="donation-container">
+                            <h3 className="donation-title">{t.donation.title}</h3>
+                            <div className="donation-buttons">
+                                <a href="#" className="donation-btn">
+                                    ~3 USD / ~2.5 EUR (1000 HUF)
+                                </a>
+                                <a href="#" className="donation-btn">
+                                    ~8 USD / ~7 EUR (3000 HUF)
+                                </a>
+                                <a href="#" className="donation-btn">
+                                    ~14 USD / ~12 EUR (5000 HUF)
+                                </a>
+                            </div>
+                            <div className="donation-info">
+                                <p>{t.donation.secure}</p>
+                                <p>{t.donation.support}</p>
+                                <p>{t.donation.rates}</p>
+                            </div>
+                        </div>
+
                     </Grid>
                 </Grid>
             </div>
