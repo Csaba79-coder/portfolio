@@ -515,13 +515,13 @@ const ResumeGenerator = () => {
                             <h3 className="donation-title">{t.donation.title}</h3>
                             <div className="donation-buttons">
                                 <a href="#" className="donation-btn">
-                                    ~3 USD / ~2.5 EUR (1000 HUF)
+                                    {t.donation.button1}
                                 </a>
                                 <a href="#" className="donation-btn">
-                                    ~8 USD / ~7 EUR (3000 HUF)
+                                    {t.donation.button2}
                                 </a>
                                 <a href="#" className="donation-btn">
-                                    ~14 USD / ~12 EUR (5000 HUF)
+                                    {t.donation.button3}
                                 </a>
                             </div>
                             <div className="donation-info">
