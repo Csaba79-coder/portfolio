@@ -194,7 +194,7 @@ export const translations = {
     hu: {
         title: "Önéletrajz és CV Generátor",
         metaDescription: "Ingyenes Önéletrajz és CV Generátor - Professzionális önéletrajzok percek alatt. Regisztráció nélkül. PDF azonnali letöltés.",
-        freeBanner: "💰 100% ingyenes - Regisztráció nem szükséges! Generáld és töltsd le PDF önéletrajzodat vagy CV-det. Sok sikert az álláskereséshez!",
+        freeBanner: "💰 100% Ingyenes - Regisztráció nem szükséges! Generáld és töltsd le PDF önéletrajzodat vagy CV-det. Sok sikert az álláskereséshez!",
         privacy: "ℹ️ Az adataid a böngésződben maradnak. Semmit nem tárolunk a szervereinken.",
         colorTitle: "Hogyan válassz színt (Szín pszichológia)",
         colors: [
@@ -251,7 +251,7 @@ export const translations = {
             button2: "~7 EUR / ~8 USD (3.000 HUF)",
             button3: "~12 EUR / ~14 USD (5.000 HUF)",
             secure: "🔒 Biztonságos fizetés Stripe-on keresztül",
-            support: "💡 Domain és hosting költségeket támogat",
+            support: "💡 Domain és hoszt költségeket támogat",
             rates: "💱 A pontos összegek forintban láthatóak, nincs átváltás"
         }
     }
