@@ -245,6 +245,9 @@ const ResumeGenerator = () => {
             link.download = `${cleanName}_${lang}.pdf`;
             link.click();
             URL.revokeObjectURL(url);
+
+            // After PDF download, redirect back to edit view
+            setShowPreview(false);
         } catch (error) {
             console.error('PDF generation error:', error);
         }
