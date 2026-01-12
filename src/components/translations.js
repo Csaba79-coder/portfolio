@@ -251,7 +251,7 @@ export const translations = {
             button2: "~7 EUR / ~8 USD (3.000 HUF)",
             button3: "~12 EUR / ~14 USD (5.000 HUF)",
             secure: "🔒 Biztonságos fizetés Stripe-on keresztül",
-            support: "💡 Domain és hoszt költségeket támogat",
+            support: "💡 Domain és tárhely költségeket támogat",
             rates: "💱 A pontos összegek forintban láthatóak, nincs átváltás"
         }
     }
