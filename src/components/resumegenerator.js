@@ -245,6 +245,9 @@ const ResumeGenerator = () => {
             link.download = `${cleanName}_${lang}.pdf`;
             link.click();
             URL.revokeObjectURL(url);
+
+            // After PDF download, redirect back to edit view
+            setShowPreview(false);
         } catch (error) {
             console.error('PDF generation error:', error);
         }
@@ -505,6 +508,27 @@ const ResumeGenerator = () => {
                             <button onClick={handleClearForm} className="clear-form-btn">
                                 {t.clearForm}
                             </button>
+                        </div>
+
+                        {/* Donation Section */}
+                        <div className="donation-container">
+                            <h3 className="donation-title">{t.donation.title}</h3>
+                            <div className="donation-buttons">
+                                <a href="https://buy.stripe.com/dRm5kw1pl8qz6lggoJ4gg01" target="_blank" rel="noopener noreferrer" className="donation-btn">
+                                    {t.donation.button1}
+                                </a>
+                                <a href="https://buy.stripe.com/aFaeV6ec77mv394b4p4gg02" target="_blank" rel="noopener noreferrer" className="donation-btn">
+                                    {t.donation.button2}
+                                </a>
+                                <a href="https://buy.stripe.com/fZu7sE6JFcGP7pk7Sd4gg03" target="_blank" rel="noopener noreferrer" className="donation-btn">
+                                    {t.donation.button3}
+                                </a>
+                            </div>
+                            <div className="donation-info">
+                                <p>{t.donation.secure}</p>
+                                <p>{t.donation.support}</p>
+                                <p>{t.donation.rates}</p>
+                            </div>
                         </div>
 
                     </Grid>
